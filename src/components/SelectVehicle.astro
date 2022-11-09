@@ -237,14 +237,24 @@
                 <p class="text-red-500 text-sm" id="phone_number2-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
-              <button
+              <div class="flex flex-col gap-2">
+
+                <button
                 type="button"
-                id="next_button"
+                id="prev_button"
                 class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
-              >
-                Next
+                >
+                Prev
               </button>
-            </form>
+              <button
+              type="button"
+              id="next_button"
+              class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
+              >
+              Next
+            </button>
+          </div>
+          </form>
           </div>
         </div>
         <!-- END JOURNEY DETAILS -->
@@ -364,6 +374,15 @@
         // setDataInVehvileForm();
       }
     });
+
+
+    const  prevButton =document.getElementById("prev_button")
+    prevButton.addEventListener("click",()=>{
+      document.getElementById("selectVehicle").classList.add("hidden");
+        document.getElementById("tripDetails").classList.remove("hidden");
+        document.getElementById("step-1").classList.add("active");
+        document.getElementById("step-2").classList.remove("active");
+    })
   }
 
   initialize();

@@ -121,6 +121,14 @@
           </div>
         </div>
         <!-- END PASSENGER DETAILS  -->
+        <div class="flex flex-col gap-3">
+        <button
+                type="button"
+                id="prev_button1"
+                class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
+                >
+                Prev
+              </button>
         <button
           type="button"
           id="confirm_button"
@@ -128,6 +136,7 @@
         >
           Confirm
         </button>
+      </div>
       </div>
     </div>
   </div>
@@ -170,6 +179,14 @@
         document.getElementById("step-3").classList.remove("active");
       });
     });
+
+    const  prevButton1 =document.getElementById("prev_button1")
+    prevButton1.addEventListener("click",()=>{
+      document.getElementById("paymentDetails").classList.add("hidden");
+        document.getElementById("selectVehicle").classList.remove("hidden");
+        document.getElementById("step-2").classList.add("active");
+        document.getElementById("step-3").classList.remove("active");
+    })
   }
   initialize();
 </script>
