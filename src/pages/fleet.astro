@@ -1,24 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="w-1/2 mb-8 border-b border-[rgba(51, 141, 195, 0.5)]">
-    <h4 class="uppercase text-blue text-xl lg:text-2xl py-4 px-4">
+  <div
+    class="w-1/2 mb-8 border-b border-[rgba(51, 141, 195, 0.5)] sm:container sm:mx-auto"
+  >
+    <h4 class="uppercase text-blue text-xl lg:text-2xl py-4 px-20">
       OUR FLEETS
     </h4>
   </div>
 
   <ul class="flex justify-around w-3/4 mx-auto text-lg lg:text-xl mb-4">
-    <li class="text-blue hover:opacity-100 py-2 underline px-3">
-      <a href="">Standard</a>
+    <li class="text-blue hover:opacity-100 py-2 underline px-3 fleet-link">
+      <span class="cursor-pointer">Standard</span>
     </li>
-    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3">
-      <a href="">Executive</a>
+    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3 fleet-link">
+      <span class="cursor-pointer">Executive</span>
     </li>
-    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3">
-      <a href="">Chaffeur</a>
+    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3 fleet-link">
+      <span class="cursor-pointer">Chaffeur</span>
     </li>
   </ul>
   <div class="flex flex-col justify-center bg-[#E5F9FD] gap-4 items-center">
@@ -104,7 +106,7 @@ import Card from '../components/Card.astro';
     </div>
   </div>
   <section>
-    <div class="">
+    <div class="sm:container sm:mx-auto">
       <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
         <div
           class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
@@ -168,11 +170,11 @@ import Card from '../components/Card.astro';
           <div
             class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
           >
-            <button
+            <a href="/booking"
               class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
             >
               Book Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -237,11 +239,11 @@ import Card from '../components/Card.astro';
           <div
             class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
           >
-            <button
+            <a href="/booking"
               class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
             >
               Book Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -305,14 +307,29 @@ import Card from '../components/Card.astro';
           <div
             class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
           >
-            <button
+            <a href="/booking"
               class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
             >
               Book Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+
+<script defer>
+  function init() {
+    const fleetLink = document.querySelectorAll(".fleet-link");
+    function colorLink() {
+      fleetLink.forEach((l) => l.classList.remove("underline"));
+      fleetLink.forEach((l) => l.classList.add("opacity-50"));
+      this.classList.add("underline");
+      this.classList.remove("opacity-50");
+    }
+    fleetLink.forEach((l) => l.addEventListener("click", colorLink));
+  }
+
+  init();
+</script>

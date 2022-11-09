@@ -9,7 +9,7 @@ import Card from '../components/Card.astro';
     class="generic-hero bg-cover mt-10 md:mt-14 lg:mt-0 h-[220px] md:h-[388px] lg:h-[728px] [background-image:url('/images/aboutus-bg.png')]"
   >
     <div
-      class="bg-black/50 h-full w-full pt-16 md:pt-24 lg:pt-[210px] md:pb-[133px] lg:pb-[250px] flex flex-col items-center"
+      class="bg-black/50 h-full w-full pt-16 md:pt-24 lg:pt-[210px] md:pb-[133px] lg:pb-[250px] flex flex-col items-center sm:container sm:mx-auto"
     >
       <h1
         class="lg:text-[64px] text-base font-medium md:text-3xl text-center text-white lg:leading-[78px]"
@@ -21,16 +21,16 @@ import Card from '../components/Card.astro';
       >
         We are here to provide you best Services.
       </p>
-      <button
+      <a  href="/booking"
         class="bg-[#B6E9FC]/50 py-2 md:py-4 lg:py-9 px-5 md:px-14 lg:px-24 rounded md:rounded-2xl font-medium text-[8px] md:text-base lg:text-3xl mt-5 md:mt-8 [backdrop-filter:blur(9px)]"
       >
         BOOK NOW
-      </button>
+      </a>
     </div>
   </section>
 
   <!-- BUSINESS CLASS -->
-  <section class="py-9 lg:py-[55px] px-5 lg:px-[75px]">
+  <section class="py-9 lg:py-[55px] px-5 lg:px-[75px] sm:container sm:mx-auto">
     <h3 class="text-base md:text-2xl lg:text-5xl font-medium text-center">
       WE HAVE BUSINESS CLASS CARS AT YOU SERVICE
     </h3>
@@ -89,12 +89,12 @@ import Card from '../components/Card.astro';
     </div>
   </section>
 
-  <section class="cards">
+  <section class="cards sm:container sm:mx-auto">
     <!-- our service -->
     <div class="our-service flex md:flex-row flex-col">
       <!-- text -->
       <div
-        class="md:w-1/2 w-full bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+        class="md:w-1/2 w-full bg-[#E5F9FD] py-7 lg:py-16"
       >
         <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
           OUR <br class="md:hidden" /><span class="text-blue">SERVICE</span>
@@ -119,7 +119,7 @@ import Card from '../components/Card.astro';
     <div class="our-cars flex flex-col md:flex-row-reverse">
       <!-- text -->
       <div
-        class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+        class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 "
       >
         <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
           OUR <br class="md:hidden" /><span class="text-blue">CARS</span>
@@ -168,16 +168,16 @@ import Card from '../components/Card.astro';
   </section>
 
   <section
-    class="cta flex flex-col items-center gap-5 md:gap-10 py-8 [background:linear-gradient(180deg,#80B8DA_0%,rgba(128,184,218,0)_100%)]"
+    class="cta flex flex-col items-center gap-5 md:gap-10 py-8 [background:linear-gradient(180deg,#80B8DA_0%,rgba(128,184,218,0)_100%)] sm:container sm:mx-auto"
   >
     <p class="font-semibold text-sm md:text-xl text-center text-white">
       You are Looking for Some Taxi Then <br />
       You are on the Right Place
     </p>
-    <button
+    <a href="/booking"
       class="text-white text-[8px] md:text-base bg-blue py-4 px-12 rounded-lg"
     >
       BOOK NOW
-    </button>
+    </a>
   </section>
 </Layout>

@@ -108,6 +108,7 @@ const { title } = Astro.props;
       id="mobileNav"
       class="mobile-nav hidden lg:hidden fixed top-0 left-0 min-h-full w-full bg-white z-50"
     >
+    
       <div
         style="
           background-image: url('/images/menubg.png');
@@ -124,8 +125,17 @@ const { title } = Astro.props;
         </div>
       </div>
       <!-- welcome -->
-      <div class="bg-[#E5F9FD] py-4 text-blue text-center">
-        Welcome to Taxi Boooking
+              <!-- NAV TOGGLE -->
+              <div class="bg-[#E5F9FD] py-4 text-blue p-10 flex items-center justify-between">
+        <button id="navToggle" onclick="closeNav()" class="lg:hidden">
+          <img src="/images/menu.svg" class="h-9 aspect-square" alt="" />
+        </button>
+        <p class=" text-center">
+
+          Welcome to Taxi Boooking
+        </p>
+        <p class="">
+        </p>
       </div>
 
       <!-- links -->
@@ -134,14 +144,14 @@ const { title } = Astro.props;
           <a
             class="flex items-center gap-6 text-blue"
             onclick="closeNav()"
-            href="/index.html"><img src="/images/house.png" alt="" />Home</a
+            href="/index"><img src="/images/house.png" alt="" />Home</a
           >
         </li>
         <li class="list-none text-xl">
           <a
             class="flex items-center gap-6 text-blue"
             onclick="closeNav()"
-            href="/fleet.html"
+            href="/fleet"
             ><img src="/images/blue-car.png" alt="" />Fleets</a
           >
         </li>
@@ -149,7 +159,7 @@ const { title } = Astro.props;
           <a
             class="flex items-center gap-6 text-blue"
             onclick="closeNav()"
-            href="/pricing.html"
+            href="/pricing"
             ><img src="/images/blue-dollar.png" alt="" />Pricing</a
           >
         </li>
@@ -157,7 +167,7 @@ const { title } = Astro.props;
           <a
             class="flex items-center gap-6 text-blue"
             onclick="closeNav()"
-            href="/generic.html"
+            href="/generic"
             ><img src="/images/blue-circles.png" alt="" />About</a
           >
         </li>
@@ -165,7 +175,7 @@ const { title } = Astro.props;
           <a
             class="flex items-center gap-6 text-blue"
             onclick="closeNav()"
-            href="/services.html"
+            href="/services"
             ><img src="/images/blue-car.png" alt="" />Services</a
           >
         </li>
@@ -198,16 +208,16 @@ const { title } = Astro.props;
             >
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/fleet.html">Fleets</a>
+            <a href="/fleet">Fleets</a>
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/pricing.html">Pricing</a>
+            <a href="/pricing">Pricing</a>
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/generic.html">About</a>
+            <a href="/generic">About</a>
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/services.html">Services</a>
+            <a href="/services">Services</a>
           </li>
 
           <div class="flex items-center gap-5">
