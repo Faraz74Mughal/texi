@@ -1,0 +1,403 @@
+---
+import { minutes } from "../data/minutes.json";
+import { hour } from "../data/hour.json";
+---
+
+<section
+  x-show="active===1"
+  id="tripDetails"
+  class="booking-form-1 flex flex-col items-center md:items-start md:flex-row gap-10 lg:gap-[76px] pb-14 px-6 lg:px-10"
+>
+  <div class="form-area w-[90%] mt-5 md:mt-0 md:w-1/2 bg-blue">
+    <p
+      class="text-base md:text-xl lg:text-[36px] font-semibold py-3 md:py-4 lg:py-5 text-center text-white border-b border-white"
+    >
+      Instant Fare Quote
+    </p>
+    <div
+      class="px-5 lg:px-8 flex flex-col gap-4 lg:gap-10 py-4 md:py-8 lg:py-10"
+    >
+      <div class="flex flex-col items-end gap-2 md:gap-5">
+        <div class="input-group w-full">
+          <input
+            type="text"
+            class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+            placeholder="Enter pickup location"
+            x-model="formData.pickup"
+            id="pickup"
+            name="pickup"
+          />
+          <p class="text-red-500 text-sm" id="pickup-errors"></p>
+        </div>
+        <!-- START DESTINATION -->
+        <div class="input-group flex gap-2 w-full flex-col relative">
+          <input
+            type="text"
+            class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+            id="destination"
+            x-model="formData.destination"
+            placeholder="Enter dropoff location"
+          />
+          <p class="text-red-500 text-sm" id="destination-errors"></p>
+        </div>
+        <!-- END DESTINATION -->
+
+        <button
+          class="bg-[#e5f9fd] text-blue text-[10px] md:text-xs lg:text-base py-3 lg:py-4 w-max pl-6 lg:pl-12 pr-2 lg:pr-3 rounded-3xl"
+        >
+          Add waypoint
+        </button>
+      </div>
+
+      <!-- MAP -->
+      <div id="mapContainer" class="h-[144px] md:h-[188px] lg:h-[350px]">
+        <!-- 1map stuff -->
+        <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+          <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-end gap-3 md:gap-5">
+        <div class="input-group w-full">
+          <label
+            for=""
+            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            >Pickup Date & Time</label
+          >
+          <div class="flex items-center bg-[#e5f9fd] mt-1 md:mt-3">
+            <div class="w-full">
+              <input
+                type="date"
+                class="py-3 lg:py-5 px-5 lg:px-11 outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+                x-model="formData.pickup_date"
+                id="pickup_date"
+                placeholder="Enter Pickup Date"
+              />
+            </div>
+
+            <div class="selects flex w-[45%]">
+              <div class="relative w-1/2 border-l-2 border-blue text-blue">
+                <!-- START PICKUP TIME -->
+
+                <select
+                  class="block absolute appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-xl w-full h-full py-3 lg:py-5 px-1 focus:outline-none"
+                  x-model="formData.hour"
+                  id="pickup_hour"
+                >
+                  {
+                    hour.map((x) => {
+                      return <option selected={x == "12"}>{x}</option>;
+                    })
+                  }
+                </select>
+
+                <!-- END PICKUP TIME -->
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-blue h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="relative w-1/2 border-l-2 border-blue">
+                <!-- START HOUR -->
+                <select
+                  class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-xl py-3 lg:py-5 px-1 leading-tight focus:outline-none"
+                  id="pickup_minnutes"
+                  x-model="formData.min"
+                >
+                  {
+                    minutes.map((x) => {
+                      return <option>{x}</option>;
+                    })
+                  }
+                </select>
+                <!-- END PICKUP HOUR -->
+
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-blue h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-red-500 text-sm" id="pickup_date-errors"></p>
+        </div>
+      </div>
+      <!-- passangers and bags -->
+      <div class="grid grid-cols-2 md:mt-4 gap-2 md:gap-5">
+        <div class="flex flex-col gap-2 md:gap-4">
+          <label
+            for=""
+            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            >Passangers</label
+          >
+          <div class="relative w-full border-l-2 border-blue">
+            <!-- START PASSENGER SELECT -->
+            <div class="w-full">
+              <select
+                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-4 lg:px-11 leading-tight focus:outline-none"
+                id="passengers"
+                x-model="formData.passengers"
+              >
+                <option value="">Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+              </select>
+              <p class="text-red-500 text-sm" id="passengers-errors"></p>
+            </div>
+
+            <!-- END PASSENGER SELECT -->
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-blue h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 md:gap-4">
+          <label
+            for=""
+            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            >Bags</label
+          >
+          <div class="relative w-full border-l-2 border-blue">
+            <!-- START LUGGAGE -->
+            <div class="">
+              <select
+                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-4 lg:px-11 leading-tight focus:outline-none"
+                name="bags"
+                id="bags"
+                x-model="formData.bags"
+              >
+                <option value="">Select</option>
+                <option>None</option>
+                <option>1</option>
+              </select>
+              <p class="text-red-500 text-sm" id="bags-errors"></p>
+            </div>
+
+            <!-- END LUGGAGE -->
+
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-blue h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- one way -->
+      <div class="relative w-full">
+        <select
+          class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-5 lg:px-11 leading-tight focus:outline-none"
+          id="types"
+          x-model="formData.type"
+        >
+          <option value="one-way">One way</option>
+          <option value="two-way">Two way</option>
+        </select>
+        <p class="text-red-500 text-sm" id="types-errors"></p>
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+        >
+          <svg
+            class="fill-blue h-4 w-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="reserve_now"
+        class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold js-submit-user"
+      >
+        RESERVE NOW
+      </button>
+      <p class="text-center text-xs lg:text-2xl text-white">
+        If you have already book the ride then manage your bookings
+      </p>
+    </div>
+
+    <div class="flex justify-center mb-6 md:mb-10">
+      <button
+        class="bg-white text-sm md:text-base text-blue py-3 md:py-4 rounded-xl px-5 md:px-10"
+      >
+        Manage your Bookings
+      </button>
+    </div>
+  </div>
+  <div class="w-[90%] md:w-1/2 flex flex-col">
+    <h2 class="text-2xl lg:text-5xl font-medium mt-10 lg:mt-20">
+      Taxi Booking
+    </h2>
+    <p class="text-base lg:text-3xl mt-9 lg:mt-20">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud
+    </p>
+    <p class="text-base lg:text-3xl text-blue mt-7 lg:mt-10">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor
+    </p>
+    <p class="text-base lg:text-3xl mt-9 lg:mt-20">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud
+    </p>
+
+    <div
+      class="h-[241px] lg:h-[450px] bg-[#D9D9D9] mt-5 [background-image:url('/images/angus.png')] bg-no-repeat bg-cover"
+    >
+    </div>
+  </div>
+</section>
+
+<!-- x-on:click.prevent="active++" -->
+
+<script defer>
+  function initialize() {
+    var reserveNow = document.getElementById("reserve_now");
+    var pickUp = document.getElementById("pickup");
+    var destination = document.getElementById("destination");
+
+    new google.maps.places.Autocomplete(pickUp);
+    new google.maps.places.Autocomplete(destination);
+
+    function clearErrors() {
+      errors = document.getElementsByClassName("text-red-500");
+      for (let item of errors) {
+        item.innerHTML = "";
+      }
+    }
+    function seterror(id, error) {
+      //sets error inside tag of id
+      element = document.getElementById(id + "-errors").innerHTML = error;
+    }
+
+    function setDataInVehvileForm() {
+      // document.getElementById("v-from").innerText =
+      //   document.getElementById("pickup").value;
+
+      // document.getElementById("v-to").innerText =
+      //   document.getElementById("destination").value;
+
+      // document.getElementById("v-p-date").innerText =
+      //   document.getElementById("pickup_date").value;
+
+      //document.getElementById("v-p-time").innerText =
+        // document.getElementById("pickup_hour").value +
+        // ":" +
+        // document.getElementById("pickup_minnutes").value;
+        document.querySelectorAll(".v-from").forEach(span=> span.innerHTML= document.getElementById("pickup").value)
+        document.querySelectorAll(".v-to").forEach(span=> span.innerHTML= document.getElementById("destination").value)
+        document.querySelectorAll(".v-p-date").forEach(span=> span.innerHTML= document.getElementById("pickup_date").value)
+        document.querySelectorAll(".v-p-time").forEach(span=> span.innerHTML= document.getElementById("pickup_hour").value+":"+document.getElementById("pickup_minnutes").value)
+        document.querySelectorAll(".v-passengers").forEach(span=> span.innerHTML= document.getElementById("passengers").value)
+        document.querySelectorAll(".v-bags").forEach(span=> span.innerHTML= document.getElementById("bags").value)
+      // document.getElementById("v-passengers").innerText =
+      //   document.getElementById("passengers").value;
+
+      // document.getElementById("v-bags").innerText =
+      //   document.getElementById("bags").value;
+    }
+
+    reserveNow.addEventListener("click", () => {
+      var returnval = true;
+      clearErrors();
+      const pickupData = document.getElementById("pickup").value;
+      if (pickupData === "") {
+        seterror("pickup", "Pickup field is required.");
+        returnval = false;
+      }
+
+      const destinationData = document.getElementById("destination").value;
+      if (destinationData === "") {
+        seterror("destination", "Destination field is required.");
+        returnval = false;
+      }
+
+      const pickup_dateData = document.getElementById("pickup_date").value;
+      if (pickup_dateData === "") {
+        seterror("pickup_date", "Pick Date field is required.");
+        returnval = false;
+      }
+
+      const passengersData = document.getElementById("passengers").value;
+      if (passengersData === "") {
+        seterror("passengers", "Passengers field is required.");
+        returnval = false;
+      }
+
+      const bagsData = document.getElementById("bags").value;
+      if (bagsData === "") {
+        seterror("bags", "Bags field is required.");
+        returnval = false;
+      }
+
+      const typeData = document.getElementById("types").value;
+      if (typeData === "") {
+        seterror("types", "Type field is required.");
+        returnval = false;
+      }
+
+      if (returnval) {
+        console.log("TEST-VIDEO",document.getElementById("pickup").value)
+        document.getElementById("tripDetails").classList.add("hidden");
+        document.getElementById("selectVehicle").classList.remove("hidden");
+        document.getElementById("step-2").classList.add("active");
+        document.getElementById("step-1").classList.remove("active");
+
+        setDataInVehvileForm();
+      }
+    });
+  }
+
+  google.maps.event.addDomListener(window, "load", initialize);
+</script>

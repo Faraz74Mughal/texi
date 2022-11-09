@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- GENERIC -->
+  <section
+    class="generic-hero bg-cover mt-10 md:mt-14 lg:mt-0 h-[220px] md:h-[388px] lg:h-[728px] [background-image:url('/images/aboutus-bg.png')]"
+  >
+    <div
+      class="bg-black/50 h-full w-full pt-16 md:pt-24 lg:pt-[210px] md:pb-[133px] lg:pb-[250px] flex flex-col items-center"
+    >
+      <h1
+        class="lg:text-[64px] text-base font-medium md:text-3xl text-center text-white lg:leading-[78px]"
+      >
+        About Us
+      </h1>
+      <p
+        class="lg:text-4xl text-xs font-medium md:text-xl text-center text-white"
+      >
+        We are here to provide you best Services.
+      </p>
+      <button
+        class="bg-[#B6E9FC]/50 py-2 md:py-4 lg:py-9 px-5 md:px-14 lg:px-24 rounded md:rounded-2xl font-medium text-[8px] md:text-base lg:text-3xl mt-5 md:mt-8 [backdrop-filter:blur(9px)]"
+      >
+        BOOK NOW
+      </button>
+    </div>
+  </section>
+
+  <!-- BUSINESS CLASS -->
+  <section class="py-9 lg:py-[55px] px-5 lg:px-[75px]">
+    <h3 class="text-base md:text-2xl lg:text-5xl font-medium text-center">
+      WE HAVE BUSINESS CLASS CARS AT YOU SERVICE
+    </h3>
+    <p class="text-[10px] md:text-base lg:text-2xl text-center mt-5 lg:mt-10">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud
+    </p>
+
+    <div class="grid grid-cols-2 gap-3 mt-10 lg:mt-16">
+      <div class="flex flex-col gap-3 md:gap-5 items-center">
+        <div
+          class="bg-[#E5F9FD] p-5 lg:p-10 w-max rounded-3xl lg:rounded-[50px]"
+        >
+          <img
+            src="/images/window-star.png"
+            class="w-8 md:w-11 lg:w-12"
+            alt=""
+          />
+        </div>
+        <p
+          class="text-sm md:text-base lg:text-[28px] font-semibold text-center"
+        >
+          QUALITY ASSURED
+        </p>
+        <p
+          class="text-center text-[10px] md:text-base lg:text-[28px] lg:leading-[34px] max-w-[428px]"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-3 md:gap-5 items-center">
+        <div
+          class="bg-[#E5F9FD] p-5 lg:p-10 w-max rounded-3xl lg:rounded-[50px]"
+        >
+          <img
+            src="/images/heritage-car.png"
+            class="w-8 md:w-11 lg:w-12"
+            alt=""
+          />
+        </div>
+        <p
+          class="text-sm md:text-base lg:text-[28px] font-semibold text-center"
+        >
+          HERITAGE AND HISTORY
+        </p>
+        <p
+          class="text-center text-[10px] md:text-base lg:text-[28px] lg:leading-[34px] max-w-[428px]"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards">
+    <!-- our service -->
+    <div class="our-service flex md:flex-row flex-col">
+      <!-- text -->
+      <div
+        class="md:w-1/2 w-full bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+      >
+        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+          OUR <br class="md:hidden" /><span class="text-blue">SERVICE</span>
+        </h5>
+        <p class="text-[14px] lg:text-[28px] mt-10 lg:mt-20 mb-5 lg:mb-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud
+        </p>
+        <p class="text-[14px] lg:text-[28px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </p>
+      </div>
+      <!-- image -->
+      <div class="md:w-1/2 w-full overflow-hidden">
+        <img src="/images/our-service.png" class="w-full" alt="" />
+      </div>
+    </div>
+
+    <!-- our cars -->
+    <div class="our-cars flex flex-col md:flex-row-reverse">
+      <!-- text -->
+      <div
+        class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+      >
+        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+          OUR <br class="md:hidden" /><span class="text-blue">CARS</span>
+        </h5>
+        <p class="text-[14px] lg:text-[28px] mt-10 lg:mt-20 mb-5 lg:mb-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud
+        </p>
+        <p class="text-[14px] lg:text-[28px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </p>
+      </div>
+      <!-- image -->
+      <div class="w-full md:w-1/2 overflow-hidden">
+        <img src="/images/our-cars.png" class="w-full" alt="" />
+      </div>
+    </div>
+
+    <!-- our drivers -->
+    <div class="our-drivers flex flex-col md:flex-row">
+      <!-- text -->
+      <div
+        class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+      >
+        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+          OUR<br class="md:hidden" />
+          <span class="text-blue">DRIVERS</span>
+        </h5>
+        <p class="text-[14px] lg:text-[28px] mt-10 lg:mt-20 mb-5 lg:mb-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud
+        </p>
+        <p class="text-[14px] lg:text-[28px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </p>
+      </div>
+      <!-- image -->
+      <div class="w-full md:w-1/2 overflow-hidden">
+        <img src="/images/our-drivers.png" class="w-full" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="cta flex flex-col items-center gap-5 md:gap-10 py-8 [background:linear-gradient(180deg,#80B8DA_0%,rgba(128,184,218,0)_100%)]"
+  >
+    <p class="font-semibold text-sm md:text-xl text-center text-white">
+      You are Looking for Some Taxi Then <br />
+      You are on the Right Place
+    </p>
+    <button
+      class="text-white text-[8px] md:text-base bg-blue py-4 px-12 rounded-lg"
+    >
+      BOOK NOW
+    </button>
+  </section>
+</Layout>

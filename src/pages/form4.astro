@@ -1,0 +1,119 @@
+---
+import FormLayout from '../layouts/FormLayout.astro';
+---
+
+<FormLayout title="Welcome to Astro.">
+  <!-- BOOKING FORM -->
+
+  <section class="pb-20">
+    <div class="container px-4 lg:px-20 mx-auto">
+      <div
+        class="w-full flex flex-wrap lg:flex-nowrap items-center justify-center gap-6"
+      >
+        <div class="w-full lg:w-2/3 bg-[#E5F9FD] rounded-lg p-6">
+          <div class="w-full flex flex-col items-center justify-center">
+            <h4 class="semi-bold text-blue text-xl lg:text-2xl mb-6">
+              Your Booking is Done
+            </h4>
+            <div class="">
+              <div
+                class="h-6 w-6 rounded-full bg-[#4A940F] flex items-center justify-center text-white"
+              >
+                <svg
+                  width="25"
+                  height="18"
+                  class="h-4 w-4"
+                  viewBox="0 0 29 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.1785 20.4147L0.6875 10.9238L2.50943 9.10182L10.1785 16.7709L26.4488 0.50061L28.2707 2.32254L10.1785 20.4147Z"
+                    fill="white"></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-lg lg:text-xl font-semibold mb-4 mt-4 text-blue">
+              Thank you for your collabration !
+            </p>
+            <p class="text-blue text-sm lg:text-base">
+              We have received your Payment. You will receive an confirmation
+              email with the details of your booking
+            </p>
+          </div>
+          <!-- START CONGRATULATION -->
+          <div class="w-full">
+            <div class="content p-4 text-blue">
+              <div class="w-3/4">
+                <table class="w-full table">
+                  <tbody>
+                    <tr
+                      class="border-t border-[#E5F9FD80] text-base lg:text-lg"
+                    >
+                      <td class="lg:w-1/4 py-3 font-medium">
+                        Pickup Location:
+                      </td>
+                      <td class="lg:w-1/4 py-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      </td>
+                      <td class="w-1/2 text-right">
+                        <div class="w-full flex justify-end">
+                          <img
+                            src="../images/car_13.png"
+                            alt=""
+                            srcset=""
+                            class="h-20 w-1/2 object-fit"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-t border-[#E5F9FD80] text-base lg:text-lg"
+                    >
+                      <td class="lg:w-1/4 py-3 font-medium">
+                        Drop-off Location:
+                      </td>
+                      <td class="lg:w-1/4 py-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr
+                      class="border-t border-[#E5F9FD80] text-base lg:text-lg"
+                    >
+                      <td class="lg:w-1/4 py-3 font-medium">Pickup Time:</td>
+                      <td class="lg:w-1/4 py-3">12:00 AM</td>
+                      <td></td>
+                    </tr>
+                    <tr
+                      class="border-t border-[#E5F9FD80] text-base lg:text-lg"
+                    >
+                      <td class="lg:w-1/4 py-3 font-medium">Driver:</td>
+                      <td class="lg:w-1/4 py-3">Miachel Strauss</td>
+                      <td></td>
+                    </tr>
+                    <tr
+                      class="border-t border-[#E5F9FD80] text-base lg:text-lg"
+                    >
+                      <td class="lg:w-1/4 py-3 font-medium">Car Type:</td>
+                      <td class="lg:w-1/4 py-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="w-full flex items-center justify-center py-6">
+                  <a href="#" class="underline text-[#FF0606]"
+                    >Change or cancel your booking</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END CONGRATULATIONS -->
+        </div>
+      </div>
+    </div>
+  </section>
+</FormLayout>

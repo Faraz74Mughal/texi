@@ -1,0 +1,827 @@
+---
+import FormLayout from '../layouts/FormLayout.astro';
+---
+
+<FormLayout>
+  <form
+    x-data="ContactForm()"
+    id="contactForm"
+    class="text-gray-600 container p-4 lg:p-6 bg-white w-full"
+    x-clock
+  >
+    <section
+      class="py-6 px-4 text-center flex items-center jusfify-center w-full"
+      x-show="success"
+    >
+      Thank you for submitting someone will be in touch to confirm your booking
+    </section>
+    <section class="form w-full" x-show="!success">
+      <div class="flex gap-4 flex-wrap lg:flex-nowrap">
+        <div class="w-full lg:w-1/4 flex gap-2 p-2 flex-col">
+          <label>Name:</label>
+          <input
+            type="text"
+            class="px-3 py-2 bg-gray-100 rounded"
+            placeholder="Enter your name"
+            name="name"
+            required
+            x-model="formData.name"
+          />
+          <p class="text-red-500 text-sm" x-text="errors['name']"></p>
+        </div>
+
+        <div
+          class="flex gap-2 p-2 flex-colw-full lg:w-1/4 flex gap-2 p-2 flex-col"
+        >
+          <label>Email:</label>
+          <input
+            type="email"
+            class="px-3 py-2 bg-gray-100 rounded"
+            placeholder="Enter your email"
+            name="name"
+            required
+            x-model="formData.email"
+          />
+          <p class="text-red-500 text-sm" x-text="errors['email']"></p>
+        </div>
+      </div>
+
+      <div class="flex gap-2 p-2 flex-col">
+        <label>phone:</label>
+        <input
+          type="text"
+          class="px-3 py-2 bg-gray-100 rounded"
+          required
+          x-model="formData.phone"
+          placeholder="Enter phone number"
+        />
+        <p class="text-red-500 text-sm" x-text="errors['phone']"></p>
+      </div>
+      <div class="flex gap-2 p-2 flex-col relative">
+        <label>Pickup Location:</label>
+        <input
+          type="text"
+          class="px-3 py-2 bg-gray-100 rounded"
+          required
+          x-model="formData.pickup"
+          x-on:input="findAddress('pickup')"
+          placeholder="Enter Zip/Location"
+          id="pickup"
+        />
+        <p class="text-red-500 text-sm" x-text="errors['pickup']"></p>
+      </div>
+
+      <div class="flex gap-2 p-2 flex-col relative">
+        <label>Destination:</label>
+        <input
+          type="text"
+          class="px-3 py-2 bg-gray-100 rounded"
+          required
+          x-model="formData.destination"
+          id="destination"
+          x-on:input="findAddress('destination')"
+          placeholder="Enter Zip/Location"
+        />
+        <p class="text-red-500 text-sm" x-text="errors['destination']"></p>
+      </div>
+
+      <div class="w-full">
+        <div class="flex p-2 gap-4">
+          <div class="flex gap-2">
+            <input
+              type="radio"
+              name="type"
+              value="one-way"
+              x-model="formData.type"
+            />
+            <label>One way</label>
+          </div>
+          <div class="flex gap-2">
+            <input
+              type="radio"
+              name="type"
+              value="two-way"
+              x-model="formData.type"
+            />
+            <label>Return</label>
+          </div>
+        </div>
+        <p class="text-red-500 text-sm" x-text="errors['type']"></p>
+      </div>
+
+      <div x-show="formData.type ==='one-way' || formData.type ==='two-way'">
+        <div class="flex gap-2 p-2 flex-col">
+          <label>Pickup Date:</label>
+          <input
+            type="date"
+            class="px-3 py-2 bg-gray-100 rounded"
+            required
+            x-model="formData.pickup_date"
+            placeholder="Enter Zip/Location"
+          />
+          <p class="text-red-500 text-sm" x-text="errors['pickup_date']"></p>
+        </div>
+        <!-- START PICKUP -->
+        <div class="flex gap-2 p-2">
+          <!-- START SELECT ITEM -->
+          <div class="flex flex-col gap-1">
+            <span class="form-label">Hour</span>
+            <select
+              class="px-3 py-2 bg-gray-100 rounded"
+              id="return_hour"
+              required
+              x-model="formData.hour"
+            >
+              <option value="">select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <p class="text-red-500 text-sm" x-text="errors['hour']"></p>
+            <span class="select-arrow"></span>
+          </div>
+          <!-- END SELECT ITEM -->
+
+          <!-- START SELECT ITEM -->
+          <div class="flex flex-col gap-1">
+            <span class="form-label">Min</span>
+            <select
+              class="px-3 py-2 bg-gray-100 rounded"
+              id="return_min"
+              required
+              x-model="formData.min"
+            >
+              <option value="">select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <p class="text-red-500 text-sm" x-text="errors['min']"></p>
+            <span class="select-arrow"></span>
+          </div>
+          <!-- END SELECT ITEM -->
+
+          <!-- START SELECT ITEM -->
+          <div class="flex flex-col gap-1">
+            <span class="form-label">AM/PM</span>
+            <select
+              class="px-3 py-2 bg-gray-100 rounded"
+              id="return_hour"
+              required
+              x-model="formData.am_or_pm"
+            >
+              <option value="">select</option>
+              <option>Am</option>
+              <option>Pm</option>
+            </select>
+            <p class="text-red-500 text-sm" x-text="errors['am_or_pm']"></p>
+            <span class="select-arrow"></span>
+          </div>
+          <!-- END SELECT ITEM -->
+        </div>
+        <div class="flex gap-2 p-2 flex-col">
+          <label>Flight Number:</label>
+          <input
+            type="text"
+            class="px-3 py-2 bg-gray-100 rounded"
+            required
+            x-model="formData.flight_number"
+            placeholder="Enter Flight Number"
+          />
+          <p class="text-red-500 text-sm" x-text="errors['flight_number']"></p>
+        </div>
+      </div>
+
+      <div x-show="formData.type ==='two-way'">
+        <div class="w-full">
+          <div class="flex gap-2 p-2 flex-col">
+            <label>Return Date:</label>
+            <input
+              type="date"
+              class="px-3 py-2 bg-gray-100 rounded"
+              required
+              x-model="formData.return_date"
+              placeholder="Return Date"
+            />
+            <p class="text-red-500 text-sm" x-text="errors['return_date']"></p>
+          </div>
+          <!-- START PICKUP -->
+          <div class="flex gap-2 p-2">
+            <!-- START SELECT ITEM -->
+            <div class="flex flex-col gap-1">
+              <span class="form-label">Hour</span>
+              <select
+                class="px-3 py-2 bg-gray-100 rounded"
+                id="return_hour"
+                required
+                x-model="formData.return_hour"
+              >
+                <option value="">select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <p class="text-red-500 text-sm" x-text="errors['return_hour']">
+              </p>
+              <span class="select-arrow"></span>
+            </div>
+            <!-- END SELECT ITEM -->
+
+            <!-- START SELECT ITEM -->
+            <div class="flex flex-col gap-1">
+              <span class="form-label">Min</span>
+              <select
+                class="px-3 py-2 bg-gray-100 rounded"
+                id="return_hour"
+                required
+                x-model="formData.return_min"
+              >
+                <option value="">select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <p class="text-red-500 text-sm" x-text="errors['return_min']"></p>
+              <span class="select-arrow"></span>
+            </div>
+            <!-- END SELECT ITEM -->
+
+            <!-- START SELECT ITEM -->
+            <div class="flex flex-col gap-1">
+              <span class="form-label">AM/PM</span>
+              <select
+                class="px-3 py-2 bg-gray-100 rounded"
+                id="return_hour"
+                required
+                x-model="formData.return_am_or_pm"
+              >
+                <option value="">select</option>
+                <option>AM</option>
+                <option>PM</option>
+              </select>
+              <p
+                class="text-red-500 text-sm"
+                x-text="errors['return_am_or_pm']"
+              >
+              </p>
+              <span class="select-arrow"></span>
+            </div>
+            <!-- END SELECT ITEM -->
+
+            <div class="flex gap-2 p-2 flex-col">
+              <label> Flight Number:</label>
+              <input
+                type="text"
+                class="px-3 py-2 bg-gray-100 rounded"
+                required
+                x-model="formData.return_flight_number"
+                placeholder="Enter Flight Number"
+              />
+              <p
+                class="text-red-500 text-sm"
+                x-text="errors['return_flight_number']"
+              >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2 p-2 flex-col">
+        <div class="flex gap-1 items-center">
+          <input type="checkbox" x-model="special_message_included" />
+          <label>Add special Requiments</label>
+        </div>
+        <div x-show="special_message_included" class="flex flex-col w-full">
+          <label>Message:</label>
+          <textarea
+            class="px-3 py-2 bg-gray-100 rounded"
+            required
+            x-model="formData.message"></textarea>
+          <p class="text-red-500 text-sm" x-text="errors['message']"></p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 flex-wrap lg:flex-nowrap">
+        <div class="w-full lg:w-1/4 flex gap-2 p-2 flex-col">
+          <label>Passengers:</label>
+
+          <select
+            class="px-3 py-2 bg-gray-100 rounded"
+            type="number"
+            min="1"
+            id="passengers"
+            required
+            x-model="formData.passengers"
+          >
+            <option value="">Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+          <p class="text-red-500 text-sm" x-text="errors['passengers']"></p>
+        </div>
+
+        <div
+          class="flex gap-2 p-2 flex-col w-full lg:w-1/4 flex gap-2 p-2 flex-col"
+        >
+          <label>Language:</label>
+          <select
+            class="px-3 py-2 bg-gray-100 rounded"
+            name="lagguage"
+            id="lagguage"
+            required
+            x-model="formData.lagguage"
+          >
+            <option value="">Select</option>
+            <option>None</option>
+            <option>1</option>
+          </select>
+          <p class="text-red-500 text-sm" x-text="errors['lagguage']"></p>
+        </div>
+      </div>
+
+      <div class="flex p-2 gap-2 items-center mb-3">
+        <input
+          type="checkbox"
+          name="consent"
+          class="col-2"
+          id="consent"
+          required
+          x-model="formData.consent"
+        />
+        <label for="consent" class="text-sm lg:text-base"
+          >I consent to your terms & conditions</label
+        >
+        <p class="text-red-500 text-sm" x-text="errors['consent']"></p>
+      </div>
+
+      <div class="flex flex-wrap p-2 gap-2 items-center mb-3 justify-center">
+        <button
+          class="w-full bg-black rounded px-3 py-3 text-white rounded shadow hover:bg-opacity-80"
+          x-on:click="submitForm"
+          x-bind:disabled="errors_count > 0"
+          >Book Now
+        </button>
+      </div>
+    </section>
+
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
+  </form>
+  <script is:inline defer>
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 50.064192, lng: -130.605469 },
+        zoom: 3,
+      });
+      const card = document.getElementById('pac-card');
+
+      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+      const center = { lat: 50.064192, lng: -130.605469 };
+      // Create a bounding box with sides ~10km away from the center point
+      const defaultBounds = {
+        north: center.lat + 0.1,
+        south: center.lat - 0.1,
+        east: center.lng + 0.1,
+        west: center.lng - 0.1,
+      };
+      const input = document.getElementById(element);
+      const options = {
+        bounds: defaultBounds,
+        componentRestrictions: { country: 'us' },
+        fields: ['address_components', 'geometry', 'icon', 'name'],
+        strictBounds: false,
+        types: ['establishment'],
+      };
+
+      const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      // Set initial restriction to the greater list of countries.
+      autocomplete.setComponentRestrictions({
+        country: ['us', 'pr', 'vi', 'gu', 'mp'],
+      });
+
+      const southwest = { lat: 5.6108, lng: 136.589326 };
+      const northeast = { lat: 61.179287, lng: 2.64325 };
+      const newBounds = new google.maps.LatLngBounds(southwest, northeast);
+
+      autocomplete.setBounds(newBounds);
+
+      const infowindow = new google.maps.InfoWindow();
+      const infowindowContent = document.getElementById('infowindow-content');
+
+      infowindow.setContent(infowindowContent);
+
+      const marker = new google.maps.Marker({
+        map,
+        anchorPoint: new google.maps.Point(0, -29),
+      });
+
+      autocomplete.addListener('place_changed', () => {
+        infowindow.close();
+        marker.setVisible(false);
+
+        const place = autocomplete.getPlace();
+
+        if (!place.geometry || !place.geometry.location) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          window.alert("No details available for input: '" + place.name + "'");
+          return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(17); // Why 17? Because it looks good.
+        }
+
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        let address = '';
+
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] &&
+              place.address_components[0].short_name) ||
+              '',
+            (place.address_components[1] &&
+              place.address_components[1].short_name) ||
+              '',
+            (place.address_components[2] &&
+              place.address_components[2].short_name) ||
+              '',
+          ].join(' ');
+        }
+
+        infowindowContent.children['place-icon'].src = place.icon;
+        infowindowContent.children['place-name'].textContent = place.name;
+        infowindowContent.children['place-address'].textContent = address;
+        infowindow.open(map, marker);
+      });
+
+      // Sets a listener on a given radio button. The radio buttons specify
+      // the countries used to restrict the autocomplete search.
+      function setupClickListener(id, countries) {
+        const radioButton = document.getElementById(id);
+
+        radioButton.addEventListener('click', () => {
+          autocomplete.setComponentRestrictions({ country: countries });
+        });
+      }
+
+      setupClickListener('changecountry-usa', 'us');
+      setupClickListener('changecountry-usa-and-uot', [
+        'us',
+        'pr',
+        'vi',
+        'gu',
+        'mp',
+      ]);
+    }
+
+    window.initMap = initMap;
+
+    //fetch function
+    function fetchPlacesApiData(element) {
+      const center = { lat: 50.064192, lng: -130.605469 };
+      // Create a bounding box with sides ~10km away from the center point
+      const defaultBounds = {
+        north: center.lat + 0.1,
+        south: center.lat - 0.1,
+        east: center.lng + 0.1,
+        west: center.lng - 0.1,
+      };
+      const input = document.getElementById(element);
+      const options = {
+        bounds: defaultBounds,
+        componentRestrictions: { country: 'us' },
+        fields: ['address_components', 'geometry', 'icon', 'name'],
+        strictBounds: false,
+        types: ['establishment'],
+      };
+      const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+
+        if (!place.geometry) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          // Do anything you like with what was entered in the ac field.
+          return;
+        }
+      });
+    }
+
+    fetchPlacesApiData('destination');
+    fetchPlacesApiData('pickup');
+
+    function ContactForm() {
+      return {
+        getInput(e, type) {
+          //  console.log("Type", type);
+          //  console.log(this.formData.destination)
+        },
+        special_message_included: false,
+        success: false,
+        activePopup: null,
+        errors_count: 0,
+        errors: [],
+        items: [],
+        formData: {
+          name: '',
+          email: '',
+          phone: '',
+          pickup: '',
+          destination: '',
+          type: '',
+          'one-way': this.type,
+          'two-way': this.type,
+          pickup_date: '',
+          hour: '',
+          min: '',
+          am_or_pm: '',
+          return_date: '',
+          return_hour: '',
+          return_min: '',
+          return_am_or_pm: '',
+          flight_number: '',
+          return_flight_number: '',
+          special_requirenments: '',
+          consent: '',
+          lagguage: '',
+          passengers: '',
+        },
+
+        setItem(val) {
+          this.formData[this.activePopup] = val;
+          this.items = [];
+        },
+
+        getErrorFields() {
+          //Name
+          if (this.formData.name === '') {
+            this.errors['name'] = 'Name is required';
+            this.errors_count++;
+          }
+          //email
+          if (this.formData.email === '') {
+            this.errors['email'] = 'Email is required';
+            this.errors_count++;
+          }
+          //phone
+          if (this.formData.phone === '') {
+            this.errors['phone'] = 'Phone is required';
+            this.errors_count++;
+          }
+          //pickup
+          if (this.formData.pickup === '') {
+            this.errors['pickup'] = 'Pickup is required';
+            this.errors_count++;
+          }
+          //destination
+          if (this.formData.destination === '') {
+            this.errors['destination'] = 'Destination is required';
+            this.errors_count++;
+          }
+          // type
+          if (this.formData.type === '') {
+            this.errors['type'] = 'Type is required';
+            this.errors_count++;
+          }
+          //pickup_date
+          if (this.formData.pickup_date === '') {
+            this.errors['pickup_date'] = 'Pickup Date is required';
+            this.errors_count++;
+          }
+          //hour
+          if (this.formData.hour === '') {
+            this.errors['hour'] = 'Hour is required';
+            this.errors_count++;
+          }
+          // min
+          if (this.formData.min === '') {
+            this.errors['min'] = 'Min is required';
+            this.errors_count++;
+          }
+          //am_or_pm
+          if (this.formData.am_or_pm === '') {
+            this.errors['am_or_pm'] = 'Am or PM is required';
+            this.errors_count++;
+          }
+
+          //return. check whether the return fields are empty and two wat is checked
+          //return_date
+
+          if (
+            this.formData.type === 'two-way' &&
+            this.formData.return_date === ''
+          ) {
+            this.errors['return_date'] = 'Return Date is required';
+            this.errors_count++;
+          }
+
+          //return_hour
+          if (
+            this.formData.type === 'two-way' &&
+            this.formData.return_hour === ''
+          ) {
+            this.errors['return_hour'] = 'Return Hour is required';
+            this.errors_count++;
+          }
+          //return_min
+          if (
+            this.formData.type === 'two-way' &&
+            this.formData.return_min === ''
+          ) {
+            this.errors['return_min'] = 'Return Min is required';
+            this.errors_count++;
+          }
+          //return_am_or_pm
+          if (
+            this.formData.type === 'two-way' &&
+            this.formData.return_am_or_pm === ''
+          ) {
+            this.errors['return_am_or_pm'] = 'AM/PM Required';
+            this.errors_count++;
+          }
+          //consent
+          if (this.formData.consent !== true) {
+            this.errors['consent'] = 'consent is required';
+            this.errors_count++;
+          }
+
+          //passengers
+          if (this.formData.passengers === '') {
+            this.errors['passengers'] = 'passengers is required';
+            this.errors_count++;
+          }
+          //lagguage
+          if (this.formData.passengers === '') {
+            this.errors['lagguage'] = 'lagguage is required';
+            this.errors_count++;
+          }
+
+          console.log('errors', this.errors);
+          return this.errors_count > 0 ? true : false;
+        },
+        toFormData(o) {
+          return Object.entries(o).reduce(
+            (d, e) => (d.append(...e), d),
+            new FormData()
+          );
+        },
+        postToEmail(form_data) {
+          //github.com/github/fetch
+          https: fetch('https://formsubmit.co/ajax/boratechlife@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify({
+              ...form_data,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                this.success = true;
+              }
+            })
+            .catch((error) => {});
+        },
+        postFormDataToGoogleSheets(form_data) {
+          const formData = this.toFormData(form_data);
+          const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxsptwTlX65yZ05oS_iC7DX7CPhr85vXkeghRxi3FBrkaDS171WHUV2piZWUrLvaxYWWg/exec';
+          fetch(scriptURL, { method: 'POST', body: formData })
+            .then((response) => {
+              if (response.status == 200) {
+                this.postToEmail(form_data);
+              }
+            })
+            .catch((error) => console.error('Error!', error.message));
+        },
+
+        submitForm(e) {
+          e.preventDefault();
+          if (this.getErrorFields() > 0) {
+            return;
+          }
+          // console.log(JSON.stringify(this.formData));
+          this.postFormDataToGoogleSheets({
+            ...this.formData,
+            destination: document.querySelector('#destination').value,
+            pickup: document.querySelector('#pickup').value,
+          });
+        },
+
+        findAddress(active) {
+          this.activePopup = active;
+          var Text = this.pickup;
+
+          if (Text === '') {
+            alert('Please enter an address');
+            return;
+          }
+
+          var Container = '';
+
+          var Key = 'HX78-PR21-GH68-HC33',
+            IsMiddleware = false,
+            Origin = '',
+            Countries = 'GBR',
+            Limit = '10',
+            Language = 'en-gb',
+            url =
+              'https://services.postcodeanywhere.co.uk/Capture/Interactive/Find/v1.10/json3.ws';
+          var params = '';
+          params += '&Key=' + encodeURIComponent(Key);
+          params += '&Text=' + encodeURIComponent(Text);
+          params += '&IsMiddleware=' + encodeURIComponent(IsMiddleware);
+          params += '&Container=' + encodeURIComponent(Container);
+          params += '&Origin=' + encodeURIComponent(Origin);
+          params += '&Countries=' + encodeURIComponent(Countries);
+          params += '&Limit=' + encodeURIComponent(Limit);
+          params += '&Language=' + encodeURIComponent(Language);
+          var http = new XMLHttpRequest();
+          http.open('POST', url, true);
+          http.setRequestHeader(
+            'Content-type',
+            'application/x-www-form-urlencoded'
+          );
+          const that = this;
+          http.onreadystatechange = function () {
+            if (http.readyState == 4 && http.status == 200) {
+              var response = JSON.parse(http.responseText);
+              console.log(response);
+              if (
+                response.Items.length == 1 &&
+                typeof response.Items[0].Error != 'undefined'
+              ) {
+                alert(response.Items[0].Description);
+              } else {
+                if (response.Items.length == 0)
+                  alert('Sorry, there were no results');
+                else {
+                  that.items = response.Items;
+                }
+              }
+            }
+          };
+          http.send(params);
+        },
+      };
+    }
+  </script>
+</FormLayout>

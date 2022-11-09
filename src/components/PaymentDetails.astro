@@ -1,0 +1,175 @@
+<!-- STEP 3 -->
+<section class="pb-20 hidden" x-show="active===3" id="paymentDetails">
+  <div class="container px-4 lg:px-20 mx-auto">
+    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6">
+      <div class="w-full lg:w-2/3">
+        <!-- START JOURNERY -->
+        <div class="w-full bg-blue">
+          <div
+            class="header px-4 py-3 shadow-md bg-[#E5F9FD] w-full text-blue text-lg lg:text-2xl"
+          >
+            Select Vehicle
+          </div>
+          <div class="content p-4">
+            <div class="text-lg lg:text-xl py-2 text-white">First Journey</div>
+            <div class="w-3/4">
+              <table class="w-full table text-[#E5F9FD]">
+                <tbody>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">From</td>
+                    <td class="lg:w-1/4 py-3">
+                      <p class="v-from">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      </p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">To:</td>
+                    <td class="lg:w-1/4 py-3">
+                      <p class="v-to">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      </p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Date:</td>
+                    <td class="lg:w-1/4 py-3">
+                      <p class="p-p-date">28/10/2022</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Pickup Time:</td>
+                    <td class="lg:w-1/4 py-3" id="p-p-time">
+                      <p class="v-p-time">12:00</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Return:</td>
+                    <td class="lg:w-1/4 py-3"> None</td>
+                  </tr>
+                  <td></td>
+
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Distance:</td>
+                    <td class="lg:w-1/4 py-3"> None</td>
+                  </tr>
+                  <td></td>
+
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Passengers:</td>
+                    <td class="lg:w-1/4 py-3"
+                      ><p class="v-passengers">One</p>
+                    </td>
+                  </tr>
+                  <td></td>
+
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Bags:</td>
+                    <td class="lg:w-1/4 py-3" id="p-bags">
+                      <p class="v-bags">One</p>
+                    </td>
+                  </tr>
+                  <td></td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END JOURNEY -->
+        <!-- START PASSENGER DETAILS -->
+        <div class="w-full bg-blue mt-6">
+          <div
+            class="header px-4 py-3 shadow-md bg-[#E5F9FD] w-full text-blue text-lg lg:text-2xl"
+          >
+            Passenger Details
+          </div>
+          <div class="content p-4 text-white text-sm">
+            <div class="w-full flex justify-between gap-4">
+              <div class="w-full lg:w-1/4 flex flex-col">
+                <div class="flex justify-between py-2">
+                  <p>Passengers</p>
+                  <p class="v-passengers">One</p>
+                </div>
+                <div class="flex justify-between py-2">
+                  <p>Bags</p>
+                  <p class="v-bags">One</p>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2">
+                <!-- <div class="flex justify-between py-2">
+                    <p>Passengers</p>
+                    <p>One</p>
+                  </div> -->
+                <div class="flex justify-between py-2">
+                  <p>Name:</p>
+                  <p id="v-name">Talha</p>
+                </div>
+                <div class="flex justify-between py-2">
+                  <p>Email:</p>
+                  <p class="v-email">abc@gmail.com</p>
+                </div>
+                <div class="flex justify-between py-2">
+                  <p>Phone:</p>
+                  <p class="v-phone_number">123 456 789</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PASSENGER DETAILS  -->
+        <button
+          type="button"
+          id="confirm_button"
+          class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-5"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script defer>
+  function initialize() {
+    const confirmButton = document.getElementById("confirm_button");
+
+    confirmButton.addEventListener("click", () => {
+      const data = {
+        pickup: document.getElementById("pickup").value,
+        destination: document.getElementById("destination").value,
+        pickup_date: document.getElementById("pickup_date").value,
+        pickup_hour: document.getElementById("pickup_hour").value,
+        pickup_minnutes: document.getElementById("pickup_minnutes").value,
+        passengers: document.getElementById("passengers").value,
+        bags: document.getElementById("bags").value,
+        types: document.getElementById("types").value,
+        fitst_name: document.getElementById("first_name").value,
+        last_name: document.getElementById("last_name").value,
+        email: document.getElementById("email").value,
+        phone_number: document.getElementById("phone_number").value,
+        flight_number: document.getElementById("flight_number").value,
+        origin: document.getElementById("origin").value,
+        second_phone_number: document.getElementById("phone_number2").value,
+      };
+
+      fetch("https://api.sheetmonkey.io/form/vyAm4TXvDnBPJFy2Pwtzn4", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((result) => {
+        console.log(result);
+        document.getElementById("paymentDetails").classList.add("hidden");
+        document.getElementById("confromForm").classList.remove("hidden");
+        document.getElementById("step-4").classList.add("active");
+        document.getElementById("step-3").classList.remove("active");
+      });
+    });
+  }
+  initialize();
+</script>

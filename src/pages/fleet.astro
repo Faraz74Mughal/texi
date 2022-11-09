@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="w-1/2 mb-8 border-b border-[rgba(51, 141, 195, 0.5)]">
+    <h4 class="uppercase text-blue text-xl lg:text-2xl py-4 px-4">
+      OUR FLEETS
+    </h4>
+  </div>
+
+  <ul class="flex justify-around w-3/4 mx-auto text-lg lg:text-xl mb-4">
+    <li class="text-blue hover:opacity-100 py-2 underline px-3">
+      <a href="">Standard</a>
+    </li>
+    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3">
+      <a href="">Executive</a>
+    </li>
+    <li class="text-blue opacity-50 hover:opacity-100 py-2 px-3">
+      <a href="">Chaffeur</a>
+    </li>
+  </ul>
+  <div class="flex flex-col justify-center bg-[#E5F9FD] gap-4 items-center">
+    <div class="justify-items-center mt-3">
+      <div class="text-center">
+        <h3 class="text-black text-xl font-semibold font-poppins">FEATURES</h3>
+      </div>
+      <div class="p-1 flex gap-4 py-2">
+        <a
+          href="#"
+          class="h-10 w-10 flex items-center text-white bg-blue justify-center rounded-xl"
+        >
+          <svg
+            width="48"
+            height="35"
+            viewBox="0 0 48 35"
+            class="stroke-current h-6 w-6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6 22.15L8.45 19C10.7833 16.6667 13.225 14.9167 15.775 13.75C18.325 12.5833 21.0667 12 24 12C26.9333 12 29.675 12.5833 32.225 13.75C34.775 14.9167 37.2167 16.6667 39.55 19L36.4 22.15C34.3667 20.1167 32.3167 18.6667 30.25 17.8C28.1833 16.9333 26.1 16.5 24 16.5C21.9 16.5 19.8167 16.9333 17.75 17.8C15.6833 18.6667 13.6333 20.1167 11.6 22.15ZM3.15 13.7L0 10.55C3.1 7.38333 6.70833 4.83333 10.825 2.9C14.9417 0.966666 19.3333 0 24 0C28.6667 0 33.0583 0.966666 37.175 2.9C41.2917 4.83333 44.9 7.38333 48 10.55L44.85 13.7C41.9167 10.9 38.7083 8.66667 35.225 7C31.7417 5.33333 28 4.5 24 4.5C20 4.5 16.2583 5.33333 12.775 7C9.29167 8.66667 6.08333 10.9 3.15 13.7ZM24 34.55L31.4 27.1C30.4333 26.1333 29.325 25.375 28.075 24.825C26.825 24.275 25.4667 24 24 24C22.5333 24 21.175 24.275 19.925 24.825C18.675 25.375 17.5667 26.1333 16.6 27.1L24 34.55Z"
+              fill="#E5F9FD"></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="h-10 w-10 flex items-center text-white bg-blue justify-center rounded-xl"
+        >
+          <svg
+            width="32"
+            height="40"
+            viewBox="0 0 32 40"
+            class="stroke-current h-6 w-6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.95 33.6C16.4833 33.6 16.8917 33.5083 17.175 33.325C17.4583 33.1417 17.6 32.8667 17.6 32.5C17.6 32.1333 17.4583 31.85 17.175 31.65C16.8917 31.45 16.4667 31.35 15.9 31.35C14.5 31.35 13.075 30.9083 11.625 30.025C10.175 29.1417 9.25 27.5833 8.85 25.35C8.78333 25.05 8.63333 24.8083 8.4 24.625C8.16667 24.4417 7.91667 24.35 7.65 24.35C7.28333 24.35 7 24.4917 6.8 24.775C6.6 25.0583 6.53333 25.35 6.6 25.65C7.1 28.45 8.28333 30.475 10.15 31.725C12.0167 32.975 13.95 33.6 15.95 33.6ZM16 40C11.4333 40 7.625 38.4333 4.575 35.3C1.525 32.1667 0 28.2667 0 23.6C0 20.2667 1.325 16.6417 3.975 12.725C6.625 8.80833 10.6333 4.56667 16 0C21.3667 4.56667 25.375 8.80833 28.025 12.725C30.675 16.6417 32 20.2667 32 23.6C32 28.2667 30.475 32.1667 27.425 35.3C24.375 38.4333 20.5667 40 16 40ZM16 37C19.7333 37 22.8333 35.725 25.3 33.175C27.7667 30.625 29 27.4333 29 23.6C29 20.9667 27.8917 17.975 25.675 14.625C23.4583 11.275 20.2333 7.73333 16 4C11.7667 7.73333 8.54167 11.275 6.325 14.625C4.10833 17.975 3 20.9667 3 23.6C3 27.4333 4.23333 30.625 6.7 33.175C9.16667 35.725 12.2667 37 16 37Z"
+              fill="#E5F9FD"></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="h-10 w-10 flex items-center text-white bg-blue justify-center rounded-xl"
+        >
+          <svg
+            width="48"
+            height="35"
+            viewBox="0 0 48 35"
+            class="stroke-current h-6 w-6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6 22.15L8.45 19C10.7833 16.6667 13.225 14.9167 15.775 13.75C18.325 12.5833 21.0667 12 24 12C26.9333 12 29.675 12.5833 32.225 13.75C34.775 14.9167 37.2167 16.6667 39.55 19L36.4 22.15C34.3667 20.1167 32.3167 18.6667 30.25 17.8C28.1833 16.9333 26.1 16.5 24 16.5C21.9 16.5 19.8167 16.9333 17.75 17.8C15.6833 18.6667 13.6333 20.1167 11.6 22.15ZM3.15 13.7L0 10.55C3.1 7.38333 6.70833 4.83333 10.825 2.9C14.9417 0.966666 19.3333 0 24 0C28.6667 0 33.0583 0.966666 37.175 2.9C41.2917 4.83333 44.9 7.38333 48 10.55L44.85 13.7C41.9167 10.9 38.7083 8.66667 35.225 7C31.7417 5.33333 28 4.5 24 4.5C20 4.5 16.2583 5.33333 12.775 7C9.29167 8.66667 6.08333 10.9 3.15 13.7ZM24 34.55L31.4 27.1C30.4333 26.1333 29.325 25.375 28.075 24.825C26.825 24.275 25.4667 24 24 24C22.5333 24 21.175 24.275 19.925 24.825C18.675 25.375 17.5667 26.1333 16.6 27.1L24 34.55Z"
+              fill="#E5F9FD"></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="h-10 w-10 flex items-center text-white bg-blue justify-center rounded-xl"
+        >
+          <svg
+            width="32"
+            height="40"
+            viewBox="0 0 32 40"
+            class="stroke-current h-6 w-6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.95 33.6C16.4833 33.6 16.8917 33.5083 17.175 33.325C17.4583 33.1417 17.6 32.8667 17.6 32.5C17.6 32.1333 17.4583 31.85 17.175 31.65C16.8917 31.45 16.4667 31.35 15.9 31.35C14.5 31.35 13.075 30.9083 11.625 30.025C10.175 29.1417 9.25 27.5833 8.85 25.35C8.78333 25.05 8.63333 24.8083 8.4 24.625C8.16667 24.4417 7.91667 24.35 7.65 24.35C7.28333 24.35 7 24.4917 6.8 24.775C6.6 25.0583 6.53333 25.35 6.6 25.65C7.1 28.45 8.28333 30.475 10.15 31.725C12.0167 32.975 13.95 33.6 15.95 33.6ZM16 40C11.4333 40 7.625 38.4333 4.575 35.3C1.525 32.1667 0 28.2667 0 23.6C0 20.2667 1.325 16.6417 3.975 12.725C6.625 8.80833 10.6333 4.56667 16 0C21.3667 4.56667 25.375 8.80833 28.025 12.725C30.675 16.6417 32 20.2667 32 23.6C32 28.2667 30.475 32.1667 27.425 35.3C24.375 38.4333 20.5667 40 16 40ZM16 37C19.7333 37 22.8333 35.725 25.3 33.175C27.7667 30.625 29 27.4333 29 23.6C29 20.9667 27.8917 17.975 25.675 14.625C23.4583 11.275 20.2333 7.73333 16 4C11.7667 7.73333 8.54167 11.275 6.325 14.625C4.10833 17.975 3 20.9667 3 23.6C3 27.4333 4.23333 30.625 6.7 33.175C9.16667 35.725 12.2667 37 16 37Z"
+              fill="#E5F9FD"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-1 text-center">
+        <h3 class="text-black text-xl font-poppins">
+          Features of this Category
+        </h3>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="">
+      <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
+        <div
+          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
+        >
+          <div class="p-5 w-full bg-blue rounded-t-lg text-center">
+            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+              SALOON
+            </h3>
+          </div>
+          <a href="#" class="">
+            <img
+              class="l"
+              src="../images/car_01.png"
+              class="h-40 w-40"
+              alt=""
+            />
+          </a>
+
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 passagers
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 Suitcase
+            </li>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+          <p
+            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+          >
+            Toyota Corolla, VW Passat or similar (standard saloon vehicle) .
+            These can accommodate up to 3 passengers plus 3 suitcases (10kg
+            max).<br />
+            <br />
+            Any more luggage than this will require a larger vehicle such as our
+            Minibus
+          </p>
+          <div
+            class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
+          >
+            <button
+              class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
+        <div
+          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
+        >
+          <div class="p-5 w-full bg-blue rounded-t-lg text-center">
+            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+              ESTATE
+            </h3>
+          </div>
+          <a href="#" class="">
+            <img
+              class="l"
+              src="../images/car_01.png"
+              class="h-40 w-40"
+              alt=""
+            />
+          </a>
+
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 passagers
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 Suitcase
+            </li>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+          <p
+            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+          >
+            Toyota Corolla, Ford Focus, Vauxhall Astra or similar (Estate
+            vehicle) . These can accommodate up to 4 passengers plus 4 suitcases
+            (20kg max) or 4 passengers plus 6 x10kg hand luggage. Any more
+            luggage than this will require a larger vehicle such as our Minibus.
+          </p>
+          <div
+            class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
+          >
+            <button
+              class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
+        <div
+          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
+        >
+          <div class="p-5 w-full bg-blue rounded-t-lg text-center">
+            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+              8 SEATER MINIBUS
+            </h3>
+          </div>
+          <a href="#" class="">
+            <img
+              class="l"
+              src="../images/car_01.png"
+              class="h-40 w-40"
+              alt=""
+            />
+          </a>
+
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 passagers
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              3 Suitcase
+            </li>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+          <p
+            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+          >
+            VW Transporter or similar. These can accommodate 8 passengers plus
+            up to 8 standard suitcases (23kg max) plus a small amount of hand
+            luggage of 10kg.
+          </p>
+          <div
+            class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
+          >
+            <button
+              class="bg-blue text-left px-5 m-2 py-2 rounded-lg text-red-50"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

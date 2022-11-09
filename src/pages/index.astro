@@ -1,0 +1,673 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+<style>
+  .lineHight{
+    line-height: 4.5rem;
+  }
+</style>
+
+<Layout title="Welcome to Astro.">
+  <!-- HERO -->
+  <section
+    class="hero relative pb-14 md:pb-48 md:min-h-[490px] lg:min-h-[924px] bg-cover pt-16 md:pt-24 lg:pt-36 bg-no-repeat bg-center [background-image:url('/images/blue-bg.png')]"
+  >
+    <!-- TEXT CONTAINER -->
+    <div
+      class="site-container flex md:flex-row flex-col-reverse gap-4 md:gap-12 lg:gap-[90px] items-center justify-center"
+    >
+      <p class="text-sm md:text-2xl lg:text-5xl font-medium text-blue">
+        CALL 1234-456-789
+      </p>
+
+      <div class="flex flex-col justify-center items-center">
+        <span
+          class="text-[10px] md:text-2xl lg:text-[40px] text-blue tracking-[.24em]"
+        >
+          ALWAYS THERE WHEN
+        </span>
+        <span
+          class="text-[20px] md:text-[40px] lg:text-[70px] font-medium text-blue leading-none"
+          >YOU NEED A TAXI</span
+        >
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row h-full">
+      <!-- car -->
+      <div class="car px-5 w-full md:w-[55%] lg:w-3/5 pt-12 relative h-full">
+        <!-- car slider -->
+        <section class="splide" aria-label="Car Slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="image h-full">
+                  <img src="/images/wish.png" class="relative z-10" alt="" />
+                  <!-- <img
+						class="image-reflection relative bottom-5 z-0 [mask-image:linear-gradient(transparent_1%,rgba(255,255,255,.7)_99%)] [transform:rotateX(180deg)] bg-contain bg-no-repeat"
+						src="/images/wish.png"
+					  /> -->
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="image h-full">
+                  <img src="/images/big-bmw.png" class="relative z-10" alt="" />
+                  <!-- <img
+						class="image-reflection relative bottom-5 z-0 [mask-image:linear-gradient(transparent_1%,rgba(255,255,255,.7)_99%)] [transform:rotateX(180deg)] bg-contain bg-no-repeat"
+						src="/images/big-bmw.png"
+					  /> -->
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="image h-full">
+                  <img src="/images/yellow.png" class="relative z-10" alt="" />
+                  <!-- <img
+						class="image-reflection relative bottom-5 z-0 [mask-image:linear-gradient(transparent_1%,rgba(255,255,255,.7)_99%)] [transform:rotateX(180deg)] bg-contain bg-no-repeat"
+						src="/images/yellow.png"
+					  /> -->
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- MOBILE -->
+        <div class="md:hidden w-full relative mb-14 mt-10 h-14">
+          <div class="cta flex items-center justify-center -mt-10 gap-5">
+            <button
+              class="py-4 px-6 bg-[#E5F9FD] font-medium text-[8px] rounded-xl"
+            >
+              Call Now
+            </button>
+            <button
+              class="py-4 px-6 bg-[#E5F9FD] font-medium text-[8px] rounded-xl"
+            >
+              Download Our App
+            </button>
+          </div>
+
+          <div class="socials absolute -bottom-10 left-0">
+            <ul class="flex flex-col items-center gap-2">
+              <li>
+                <a href="">
+                  <img src="/images/ig_dark.png" class="h-5" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="/images/fb_dark.png" class="h-5" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="/images/wa_dark.png" class="h-5" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="my-slider-nav absolute left-0 w-full -bottom-10 flex justify-center items-center gap-5"
+          >
+            <button id="prevBtn" onclick="goTo('<')">
+              <img src="/images/prev.png" alt="" />
+            </button>
+            <div class="slideNum">
+              <span id="currentMobileSlide" class="text-2xl"></span> /
+              <span id="totalMobileSlides"></span>
+            </div>
+            <button id="nextBtn" onclick="goTo('>')">
+              <img src="/images/next.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- make-trip -->
+      <div
+        class="make-trip w-full md:w-[45%] lg:w-2/5 pt-5 md:pt-[78px] lg:pt-[100px] flex flex-col px-3 md:px-0 md:pr-6 lg:pr-[125px] relative h-full"
+      >
+        <p class="text-base md:text-[10px] lg:text-[20px] font-medium">
+          MAKE YOUR TRIP NOW
+        </p>
+        <span class="bg-black w-10 h-[2px]"></span>
+        <!-- FORM -->
+        <form action="" class="mt-5 flex-col flex gap-5 w-full">
+          <div
+            class="input-group bg-white w-full flex gap-5 items-center py-4 px-9"
+          >
+            <img src="/images/car.png" class="h-5" alt="" />
+            <select
+              name=""
+              id=""
+              class="bg-transparent text-[10px] lg:text-base font-semibold px-1 text-center"
+            >
+              <option value="" class="text-center">Select Your Car</option>
+              <option value="" class="text-center">Car 1</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 lg:gap-5 w-full">
+            <div
+              class="input-group bg-white flex gap-2 items-center py-4 pr-4 pl-5 lg:pl-9"
+            >
+              <img src="/images/truck-pickup.png" class="h-5" alt="" />
+
+              <input
+                type="text"
+                placeholder="Pickup Location"
+                class="bg-white h-full outline-none text-[10px] lg:text-base border-l w-full border-gray-200 pl-2"
+              />
+            </div>
+
+            <div
+              class="input-group bg-white flex gap-2 items-center py-4 pr-4 pl-5 lg:pl-9"
+            >
+              <img src="/images/calender.png" class="h-5" alt="" />
+
+              <input
+                type="text"
+                placeholder="Date and Time"
+                class="bg-white h-full outline-none text-[10px] lg:text-base border-l w-full border-gray-200 pl-2"
+              />
+            </div>
+            <div
+              class="input-group bg-white flex gap-2 items-center py-4 pr-4 pl-5 lg:pl-9"
+            >
+              <img src="/images/truck-pickup.png" class="h-5" alt="" />
+
+              <input
+                type="text"
+                placeholder="Dropoff Location"
+                class="bg-white h-full outline-none text-[10px] lg:text-base border-l w-full border-gray-200 pl-2"
+              />
+            </div>
+
+            <div
+              class="input-group bg-white flex gap-2 items-center py-4 pr-4 pl-5 lg:pl-9"
+            >
+              <img src="/images/calender.png" class="h-5" alt="" />
+
+              <input
+                type="text"
+                placeholder="Date and Time"
+                class="bg-white h-full outline-none text-[10px] lg:text-base border-l w-full border-gray-200 pl-2"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full text-sm md:text-[10px] lg:text-base text-center cursor-pointer bg-black py-4 md:py-2 lg:py-[14px] text-white"
+          >
+            Calculate Price
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="md:absolute hidden md:block left-0 bottom-28 lg:bottom-0 md:h-1/4 lg:h-1/3 w-full md:w-3/5"
+    >
+      <div
+        class="cta flex items-center justify-center -mt-4 lg:mt-5 gap-5 lg:gap-10"
+      >
+        <button
+          class="py-4 lg:py-7 px-6 lg:px-11 bg-[#E5F9FD] font-medium text-[8px] md:text-base lg:text-[30px] rounded-xl lg:rounded-[20px]"
+        >
+          Call Now
+        </button>
+        <button
+          class="py-4 lg:py-7 px-6 lg:px-11 bg-[#E5F9FD] font-medium text-[8px] md:text-base lg:text-[30px] rounded-xl lg:rounded-[20px]"
+        >
+          Download Our App
+        </button>
+      </div>
+
+      <div class="socials absolute bottom-8 left-6">
+        <ul class="flex flex-col items-center gap-4">
+          <li>
+            <a href="">
+              <img src="/images/ig_dark.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="/images/fb_dark.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="/images/wa_dark.png" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="my-slider-nav absolute left-0 w-full bottom-10 flex justify-center items-center gap-5"
+      >
+        <button id="prevBtn" onclick="goTo('<')">
+          <img src="/images/prev.png" alt="" />
+        </button>
+        <div class="slideNum">
+          <span id="currentSlide" class="text-2xl"></span> /
+          <span id="totalSlides"></span>
+        </div>
+        <button id="nextBtn" onclick="goTo('>')">
+          <img src="/images/next.png" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <!-- CUSTOMER CARE -->
+
+    <div
+      class="customer-care shadow-md lg:shadow-none absolute right-0 bottom-0 w-full lg:max-w-[40%] flex items-center gap-8 bg-white py-[30px] px-3 md:px-14 lg:px-8 md:pr-[125px] lg:pr-[125px] z-10"
+    >
+      <div class="flex items-start gap-5">
+        <!-- <img
+			  src="/images/customer-service.png"
+			  class="w-8 aspect-auto"
+			  alt=""
+			/> -->
+
+        <span
+          class="bg-[#E5F9FD] lg:bg-transparent p-2 lg:p-0 rounded-xl md:bg-none"
+        >
+          <svg
+            class="md:fill-black h-8 w-8"
+            width="22"
+            height="24"
+            viewBox="0 0 22 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_145_856)">
+              <path
+                d="M20.8217 11.5963H19.4736V10.8845C19.4736 10.688 19.3227 10.5287 19.1365 10.5287H18.4624V8.74924C18.4624 4.43214 15.1362 0.919922 11.0476 0.919922C6.95907 0.919922 3.63283 4.43214 3.63283 8.74919V10.5286H2.95873C2.77261 10.5286 2.6217 10.688 2.6217 10.8845V11.5962H1.27355C1.08743 11.5962 0.936523 11.7556 0.936523 11.9521V16.5785C0.936523 16.775 1.08743 16.9343 1.27355 16.9343H2.6217V17.6461C2.6217 17.8426 2.77261 18.0019 2.95873 18.0019H4.98098C5.16714 18.0019 5.318 17.8426 5.318 17.6461V10.8845C5.318 10.688 5.1671 10.5286 4.98098 10.5286H4.30688V8.74919C4.30688 4.82459 7.33074 1.63165 11.0476 1.63165C14.7645 1.63165 17.7884 4.82459 17.7884 8.74919V10.5286H17.1143C16.9282 10.5286 16.7773 10.688 16.7773 10.8845V17.6462C16.7773 17.8427 16.9282 18.002 17.1143 18.002H17.7884V19.4255C17.7884 20.4067 17.0324 21.2049 16.1032 21.2049H12.7042C12.5432 20.1964 11.7108 19.4255 10.7106 19.4255C9.59555 19.4255 8.68836 20.3834 8.68836 21.5608C8.68836 22.7382 9.59551 23.6961 10.7106 23.6961C11.7108 23.6961 12.5432 22.9252 12.7042 21.9167H16.1032C17.4041 21.9167 18.4624 20.7992 18.4624 19.4255V18.002H19.1365C19.3227 18.002 19.4736 17.8427 19.4736 17.6462V16.9344H20.8217C21.0078 16.9344 21.1587 16.7751 21.1587 16.5786V11.9522C21.1587 11.7556 21.0078 11.5963 20.8217 11.5963ZM2.62166 16.2226H1.61058V12.308H2.62166V16.2226ZM4.64391 11.2403V17.2903H3.29575V11.2403H4.64391ZM10.7106 22.9843C9.96722 22.9843 9.36246 22.3458 9.36246 21.5608C9.36246 20.7759 9.96722 20.1373 10.7106 20.1373C11.454 20.1373 12.0588 20.7759 12.0588 21.5608C12.0588 22.3458 11.454 22.9843 10.7106 22.9843ZM18.7995 17.2903H17.4514V11.2403H18.7995V17.2903ZM20.4847 16.2226H19.4736V12.308H20.4847V16.2226Z"
+                fill="#338DC3"></path>
+              <path
+                d="M11.0473 17.93V15.4389C11.0473 15.2423 10.8964 15.083 10.7103 15.083C10.5242 15.083 10.3733 15.2423 10.3733 15.4389V17.93C10.3733 18.1266 10.5242 18.2858 10.7103 18.2858C10.8964 18.2859 11.0473 18.1266 11.0473 17.93Z"
+                fill="#338DC3"></path>
+              <path
+                d="M12.2269 18.7149C12.3434 18.7149 12.4566 18.6511 12.5191 18.5369L13.6987 16.3795C13.7918 16.2093 13.7365 15.9917 13.5754 15.8934C13.4142 15.7952 13.208 15.8535 13.115 16.0237L11.9353 18.181C11.8423 18.3512 11.8975 18.5689 12.0587 18.6671C12.1117 18.6995 12.1697 18.7149 12.2269 18.7149Z"
+                fill="#338DC3"></path>
+              <path
+                d="M9.19384 18.7149C9.25102 18.7149 9.309 18.6995 9.36204 18.6672C9.52325 18.5689 9.5785 18.3513 9.48539 18.1811L8.30575 16.0237C8.21269 15.8534 8.00645 15.7952 7.84534 15.8935C7.68413 15.9917 7.62888 16.2094 7.72199 16.3796L8.90163 18.537C8.96405 18.6512 9.07732 18.7149 9.19384 18.7149Z"
+                fill="#338DC3"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_145_856">
+                <rect
+                  width="21.5704"
+                  height="22.7761"
+                  fill="white"
+                  transform="translate(0.262451 0.919922)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+        <div class="flex flex-col">
+          <p class="font-semibold text-[8px] md:text-lg lg:text-sm">
+            24/7 Customer Service
+          </p>
+          <p class="text-[8px] md:text-base lg:text-[13px]">
+            Lorem ipsum dolor sit amet, consectetur.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-5">
+        <span class="bg-[#E5F9FD] lg:bg-transparent p-2 rounded-xl md:bg-none">
+          <svg
+            class="md:fill-black h-8 w-8"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.5106 6.67651C17.511 6.54914 17.486 6.42297 17.4372 6.3053C17.3884 6.18762 17.3166 6.08079 17.2262 5.99098L12.3169 1.08812C12.1347 0.906617 11.8878 0.804688 11.6305 0.804688C11.3731 0.804688 11.1262 0.906617 10.944 1.08812V1.08816L6.05416 5.97149C5.40027 5.72723 3.40154 5.20691 1.28288 6.91379C1.17669 6.99921 1.08969 7.10598 1.02752 7.22717C0.965363 7.34837 0.929433 7.48127 0.922072 7.61724C0.91471 7.7532 0.936081 7.8892 0.984796 8.01638C1.03351 8.14356 1.10848 8.25908 1.20483 8.35543L5.34825 12.4934L2.34118 15.4965C2.31106 15.5264 2.28715 15.5621 2.27083 15.6013C2.2545 15.6405 2.24608 15.6826 2.24605 15.7251C2.24602 15.7675 2.25437 15.8096 2.27063 15.8488C2.28688 15.8881 2.31073 15.9238 2.34081 15.9538C2.37088 15.9838 2.40659 16.0077 2.44589 16.0239C2.48519 16.0402 2.52731 16.0485 2.56984 16.0485C2.61238 16.0484 2.65449 16.04 2.69377 16.0237C2.73305 16.0075 2.76872 15.9836 2.79876 15.9535L5.80586 12.9504L9.93328 17.0724C10.0235 17.1625 10.1306 17.234 10.2485 17.2828C10.3663 17.3316 10.4927 17.3567 10.6203 17.3567C10.6429 17.3567 10.6657 17.3559 10.6885 17.3543C10.8268 17.3446 10.9614 17.3054 11.0833 17.2393C11.2051 17.1732 11.3113 17.0817 11.3947 16.971C12.9988 14.8418 12.7302 13.1598 12.342 12.2397L17.2262 7.36208C17.3166 7.27227 17.3884 7.16543 17.4372 7.04775C17.486 6.93007 17.5109 6.80389 17.5106 6.67651ZM16.7686 6.90504L11.7253 11.9417C11.6772 11.9897 11.6455 12.0515 11.6346 12.1185C11.6238 12.1854 11.6342 12.2541 11.6646 12.3148C12.5081 13.9994 11.5335 15.7117 10.8776 16.5824C10.8497 16.6192 10.8142 16.6496 10.7735 16.6716C10.7328 16.6936 10.6879 16.7065 10.6418 16.7097C10.5957 16.7128 10.5494 16.706 10.5061 16.6897C10.4628 16.6735 10.4236 16.6481 10.3909 16.6154L1.6624 7.89838C1.63028 7.86614 1.60531 7.8275 1.58911 7.78499C1.57291 7.74248 1.56585 7.69704 1.56838 7.65163C1.57091 7.60622 1.58298 7.56184 1.60381 7.52139C1.62464 7.48094 1.65375 7.44532 1.68926 7.41684C2.73595 6.57359 3.74076 6.34854 4.51537 6.34854C5.02048 6.34128 5.52136 6.44145 5.98472 6.64239C6.04546 6.67273 6.11422 6.68321 6.18126 6.67234C6.24829 6.66148 6.31021 6.62983 6.35823 6.58188L11.4016 1.54517C11.4624 1.48466 11.5447 1.45069 11.6305 1.45069C11.7163 1.45069 11.7986 1.48466 11.8593 1.54517L16.7686 6.44803C16.7987 6.47803 16.8225 6.51365 16.8388 6.55286C16.8551 6.59207 16.8634 6.63409 16.8634 6.67653C16.8634 6.71897 16.8551 6.761 16.8388 6.8002C16.8225 6.83941 16.7987 6.87503 16.7686 6.90504Z"
+              fill="#338DC3"></path>
+          </svg>
+        </span>
+        <!-- <img
+			  src="/images/push-pin.png"
+			  class="w-8 aspect-auto"
+			  alt=""
+			/> -->
+        <div class="flex flex-col">
+          <p class="font-semibold text-[8px] md:text-lg lg:text-sm">
+            Early Booking
+          </p>
+          <p class="text-[8px] md:text-base lg:text-[13px]">
+            Lorem ipsum dolor sit amet, consectetur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+
+  <section
+    class="welcome pt-16 lg:pt-[80px] pb-[56px] flex flex-col items-center sm:container sm:mx-auto px-7 lg:px-7"
+  >
+    <h1 class="text-base md:text-[28px] lg:mb-6 lg:text-[60px] font-medium">
+      WELCOME TO TAXI <span class="text-blue">BOOKING</span> WEBSITE
+    </h1>
+    <h3 class="text-sm md:text-lg lg:text-5xl font-medium">
+      WE HAVE MOST RELIABLE TAXI FLEET
+    </h3>
+  </section>
+
+  <!-- CONTACT -->
+  <section
+    class="contact  [background-image:url('/images/contact-bg.png')] bg-cover flex justify-center "
+  >
+  <div class="flex items-center  md:px-[43px] md:flex-row md:justify-between  sm:container sm:mx-auto  gap-10 flex-col md:items-start  py-[70px] px-5 sm:flex-row w-[400px]">
+    <div class="w-full md:w-3/5">
+      <div
+        class="card rounded-[10px] flex flex-col overflow-hidden md:w-[330px] lg:w-[521px] xl:w-[621px]"
+      >
+        <div
+          class="card-header bg-[#79a4bd] px-5 lg:px-12 flex flex-col py-3 lg:pt-[23px] lg:pb-[34px]"
+        >
+          <h4 class="text-lg lg:text-[36px] font-medium lg:mb-5">
+            Have you any question?
+          </h4>
+          <h6 class="text-base lg:text-[28px] ">
+            Send us quick email: <span class="text-blue">taxi@gmail.com</span>
+          </h6>
+        </div>
+
+        <div
+          class="card-body px-5 lg:px-12 flex flex-col pt-8 pb-12 lg:py-16 [background:rgba(177,232,252,0.5)] [backdrop-filter:blur(9px)]"
+        >
+          <h5 class="text-lg lg:text-[32px]">Company Name</h5>
+          <h4 class="font-medium text-[25px] lg:text-5xl">Contact Us</h4>
+          <p class="text-[15px] lg:text-[28px] mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud
+          </p>
+          <div class="mt-7 flex items-center gap-6 lg:gap-12">
+            <button
+              class="bg-[#338DC3] text-sm lg:text-base rounded-[10px] px-4 lg:px-10 py-3 lg:py-5 text-white text-center"
+            >
+              Book your Taxi <br />
+              123-456-789
+            </button>
+            <button
+              class="rounded-[10px] text-sm lg:text-base bg-black px-4 lg:px-10 py-3 lg:py-5 text-white"
+            >
+              Book Online
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full md:w-2/5 flex flex-col gap-8 lg:gap-[63px] text-white">
+      <!-- call us -->
+      <div class="flex flex-col gap-4 lg:gap-[35px]">
+        <p class="text-xl lg:text-4xl font-medium">Call Us</p>
+        <p class="text-[15px] lg:text-[28px]">Book Your Taxi 123-456-789</p>
+      </div>
+
+      <!-- email us -->
+      <div class="flex flex-col gap-4 lg:gap-[35px]">
+        <p class="text-xl lg:text-4xl font-medium">Email Us</p>
+        <p class="text-[15px] lg:text-[28px]">Email:taxi@gmail.com</p>
+      </div>
+
+      <!-- find us -->
+      <div class="flex flex-col gap-4 lg:gap-[35px]">
+        <p class="text-xl lg:text-4xl font-medium">Find Us</p>
+        <p class="text-[15px] lg:text-[28px]">Our Office....</p>
+        <p class="text-[15px] lg:text-[28px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud
+        </p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- FLEETS -->
+
+  <section class="fleets site-container flex flex-col gap-7 md:gap-20 py-12 sm:container sm:mx-auto px-7 md:px-11 lg:px-16">
+    <h2 class="text-lg md:text-[34px] lg:text-[60px] font-semibold text-center ">
+      OUR <span class="text-blue">FLEETS</span>
+    </h2>
+
+    <!-- fleets  -->
+    <div
+      class="grid grid-cols-2 gap-x-6 gap-y-10 md:gap-y-16 md:gap-x-24 lg:gap-44"
+    >
+      <!-- saloon -->
+      <article
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+      >
+        <div
+          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+        >
+          SALOON
+        </div>
+
+        <img src="/images/audi.png" alt="" />
+
+        <ul
+          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+        >
+          <li class="w-max text-center flex items-center gap-2">
+            <img src="/images/dots.png" alt="" />
+            4 Passanger
+          </li>
+          <li
+            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+          >
+            <img src="/images/dots.png" alt="" />2 Suitcase
+          </li>
+        </ul>
+
+        <a
+          href="/fleet"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+        >
+          View Fleet
+        </a>
+      </article>
+      <!-- executive -->
+      <article
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex justify-between flex-col items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+      >
+        <div
+          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+        >
+          EXECUTIVE
+        </div>
+
+        <img src="/images/benz.png" alt="" />
+
+        <ul
+          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+        >
+          <li class="w-max text-center flex items-center gap-2">
+            <img src="/images/dots.png" alt="" />
+            3 Passanger
+          </li>
+          <li
+            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+          >
+            <img src="/images/dots.png" alt="" />3 Suitcase
+          </li>
+        </ul>
+
+        <a
+          href="/fleet"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+        >
+          View Fleet
+        </a>
+      </article>
+      <!-- saloon -->
+      <article
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+      >
+        <div
+          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+        >
+          SALOON
+        </div>
+
+        <img src="/images/audi.png" alt="" />
+
+        <ul
+          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+        >
+          <li class="w-max text-center flex items-center gap-2">
+            <img src="/images/dots.png" alt="" />
+            4 Passanger
+          </li>
+          <li
+            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+          >
+            <img src="/images/dots.png" alt="" />2 Suitcase
+          </li>
+        </ul>
+
+        <a
+          href="/fleet"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+        >
+          View Fleet
+        </a>
+      </article>
+      <!-- executive -->
+      <article
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex justify-between flex-col items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+      >
+        <div
+          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+        >
+          EXECUTIVE
+        </div>
+
+        <img src="/images/benz.png" alt="" />
+
+        <ul
+          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+        >
+          <li class="w-max text-center flex items-center gap-2">
+            <img src="/images/dots.png" alt="" />
+            3 Passanger
+          </li>
+          <li
+            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+          >
+            <img src="/images/dots.png" alt="" />3 Suitcase
+          </li>
+        </ul>
+
+        <a
+          href="/fleet"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+        >
+          View Fleet
+        </a>
+      </article>
+    </div>
+
+    <p class="text-sm md:text-base lg:text-[28px] text-center">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor
+    </p>
+  </section>
+
+  <!-- JOURNEY -->
+
+  <section
+    class="journey h-[242px] md:h-[500px] lg:h-[960px] [background-image:url('/images/journey-bg.png')] bg-cover"
+  >
+    <div
+      class="overlay py-14 md:py-0 w-full h-full bg-black/40 justify-center flex-col lg:gap-8 text-white items-center flex"
+    >
+      <h4 class="text-lg md:text-3xl lg:text-[60px]">
+        Enjoy The Journey With Us
+      </h4>
+      <p class="text-sm md:text-xl lg:text-[40px]">
+        You should be surely enjoy the ride with us.
+      </p>
+      <a
+        href="/form1"
+        class="text-sm md:text-xl lg:text-[40px] rounded-[14px] border-[3px] mt-10 border-blue py-4 lg:py-5 px-10"
+      >
+        Book Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+
+  <section
+    class="feedback py-16 lg:py-28 px-7 lg:px-16 flex flex-col items-center sm:container sm:mx-auto"
+  >
+    <h2 class="text-xl md:text-3xl lg:text-[65px] font-semibold text-center">
+      FEED <span class="text-blue">BACK</span>
+    </h2>
+    <p class="text-sm md:text-base lg:text-[32px] lg:my-5">
+      What Customer think of us.
+    </p>
+    <div class="start flex items-center gap-1">
+      <img src="/images/star.png" class="h-5 lg:h-10" alt="" />
+      <img src="/images/star.png" class="h-5 lg:h-10" alt="" />
+      <img src="/images/star.png" class="h-5 lg:h-10" alt="" />
+      <img src="/images/star.png" class="h-5 lg:h-10" alt="" />
+      <img src="/images/star.png" class="h-5 lg:h-10" alt="" />
+    </div>
+
+    <div
+      class="feedbacks grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 lg:gap-[60px] mt-12 lg:mt-[90px]"
+    >
+      <!-- feedback -->
+      <div
+        class="p-4 lg:p-8 pt-8 lg:pt-16 bg-[#E5F9FD] flex flex-col items-center gap-4 relative rounded-[10px] border-2 border-[#80B8DA]"
+      >
+        <img
+          src="/images/quote.png"
+          class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
+          alt=""
+        />
+        <p class="text-sm lg:text-2xl italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut l
+        </p>
+        <h6 class="text-sm lg:text-2xl italic text-left w-full font-semibold">
+          Kevin Smith
+        </h6>
+      </div>
+      <!-- feedback -->
+      <div
+        class="p-4 lg:p-8 pt-8 lg:pt-16 bg-[#E5F9FD] flex flex-col items-center gap-4 relative rounded-[10px] border-2 border-[#80B8DA]"
+      >
+        <img
+          src="/images/quote.png"
+          class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
+          alt=""
+        />
+        <p class="text-sm lg:text-2xl italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut l
+        </p>
+        <h6 class="text-sm lg:text-2xl italic text-left w-full font-semibold">
+          Kevin Smith
+        </h6>
+      </div>
+    </div>
+  </section>
+</Layout>
