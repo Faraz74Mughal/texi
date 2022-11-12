@@ -11,8 +11,11 @@ import Card from '../components/Card.astro';
 <Layout title="Welcome to Astro.">
   <!-- HERO -->
   <section
-    class="hero relative pb-14 md:pb-48 md:min-h-[490px] lg:min-h-[924px] bg-cover pt-16 md:pt-24 lg:pt-36 bg-no-repeat bg-center [background-image:url('/images/blue-bg.png')]"
+    class="hero relative pb-14 md:pb-48 md:min-h-[490px] lg:min-h-[924px] bg-cover pt-16 md:pt-24 lg:pt-36 bg-no-repeat bg-center [background-image:url('/images/blue-bg.png')]
+    
+    "
   >
+  <div class="sm:container sm:mx-auto">
     <!-- TEXT CONTAINER -->
     <div
       class="site-container flex md:flex-row flex-col-reverse gap-4 md:gap-12 lg:gap-[90px] items-center justify-center"
@@ -34,7 +37,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
 
-    <div class="flex flex-col md:flex-row h-full">
+    <div class="flex flex-col md:flex-row h-full ">
       <!-- car -->
       <div class="car px-5 w-full md:w-[55%] lg:w-3/5 pt-12 relative h-full">
         <!-- car slider -->
@@ -349,6 +352,7 @@ import Card from '../components/Card.astro';
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- WELCOME -->
