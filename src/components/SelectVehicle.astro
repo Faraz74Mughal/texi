@@ -1,4 +1,20 @@
-<section class="pb-20 hidden sm:container sm:mx-auto" x-show="active===2" id="selectVehicle">
+<style>
+  .bg-green {
+    background-color: rgb(3, 168, 3);
+  }
+  .error-clor {
+    color: #f7cdcd;
+  }
+  .error-clor-dark {
+    color: #a71313;
+  }
+</style>
+
+<section
+  class="pb-20 hidden sm:container sm:mx-auto"
+  x-show="active===2"
+  id="selectVehicle"
+>
   <div class="container px-4 lg:px-20 mx-auto">
     <div class="w-full flex flex-wrap lg:flex-nowrap gap-6">
       <!-- START SELECT VEHICLE -->
@@ -16,9 +32,11 @@
               </div>
               <div class="w-1/3 gap-2">
                 <h5 class="text-xl mb-1">Saloon</h5>
-                <h4 class="font-bold text-xl mb-2">$50</h4>
+                <!-- <h4 class="font-bold text-xl mb-2">$50</h4> -->
 
-                <button class="px-4 py-0.5 rounded bg-blue text-white">
+                <button
+                  class="select-car px-4 py-0.5 rounded bg-blue text-white"
+                >
                   select
                 </button>
               </div>
@@ -29,9 +47,11 @@
               </div>
               <div class="w-1/3 gap-2">
                 <h5 class="text-xl mb-1">Saloon</h5>
-                <h4 class="font-bold text-xl mb-2">$50</h4>
+                <!-- <h4 class="font-bold text-xl mb-2">$50</h4> -->
 
-                <button class="px-4 py-0.5 rounded bg-blue text-white">
+                <button
+                  class="select-car px-4 py-0.5 rounded bg-blue text-white"
+                >
                   select
                 </button>
               </div>
@@ -42,14 +62,17 @@
               </div>
               <div class="w-1/3 gap-2">
                 <h5 class="text-xl mb-1">Saloon</h5>
-                <h4 class="font-bold text-xl mb-2">$50</h4>
+                <!-- <h4 class="font-bold text-xl mb-2">$50</h4> -->
 
-                <button class="px-4 py-0.5 rounded bg-blue text-white">
+                <button
+                  class="select-car px-4 py-0.5 rounded bg-blue text-white"
+                >
                   select
                 </button>
               </div>
             </div>
           </div>
+          <p class="error-clor-dark text-sm text-end pb-4 pr-16" id="carInfo-errors"></p>
         </div>
       </div>
       <!-- END SELECT VEHICLE -->
@@ -71,50 +94,50 @@
                     <td class="lg:w-1/4 py-3 font-medium">From</td>
                     <td class="lg:w-1/4 py-3">
                       <p class="v-from">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        
                       </p>
                     </td>
                     <td></td>
                   </tr>
                   <tr class="border-t border-[#E5F9FD80] text-sm">
                     <td class="lg:w-1/4 py-3 font-medium">To:</td>
-                    <td class="lg:w-1/4 py-3" >
+                    <td class="lg:w-1/4 py-3">
                       <p class="v-to">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        
                       </p>
                     </td>
                     <td></td>
                   </tr>
                   <tr class="border-t border-[#E5F9FD80] text-sm">
-                    <td class="lg:w-1/4 py-3 font-medium">Date:</td>
-                    <td class="lg:w-1/4 py-3" id="v-p-date">
-                      <p class="v-p-date">28/10/2022</p>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr class="border-t border-[#E5F9FD80] text-sm">
                     <td class="lg:w-1/4 py-3 font-medium">Pickup Time:</td>
-                    <td class="lg:w-1/4 py-3" 
-                      ><p class="v-p-time">12:00</p>
+                    <td class="lg:w-1/4 py-3" id="v-p-date">
+                      <p class="v-p-date"></p>
                     </td>
                     <td></td>
                   </tr>
+                  <!-- <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Pickup Time:</td>
+                    <td class="lg:w-1/4 py-3"><p class="v-p-time">12:00</p></td>
+                    <td></td>
+                  </tr> -->
                   <tr class="border-t border-[#E5F9FD80] text-sm">
-                    <td class="lg:w-1/4 py-3 font-medium">Return:</td>
-                    <td class="lg:w-1/4 py-3"> None</td>
+                    <td class="lg:w-1/4 py-3 font-medium">Return Time:</td>
+                    <td class="lg:w-1/4 py-3">
+                      <p class="v-r-date"></p>
+                    </td>
                   </tr>
                   <td></td>
 
-                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                  <!-- <tr class="border-t border-[#E5F9FD80] text-sm">
                     <td class="lg:w-1/4 py-3 font-medium">Distance:</td>
                     <td class="lg:w-1/4 py-3">None</td>
                   </tr>
-                  <td></td>
+                  <td></td> -->
 
                   <tr class="border-t border-[#E5F9FD80] text-sm">
                     <td class="lg:w-1/4 py-3 font-medium">Passengers:</td>
                     <td class="lg:w-1/4 py-3"
-                      ><p class="v-passengers">One</p>
+                      ><p class="v-passengers"></p>
                     </td>
                   </tr>
                   <td></td>
@@ -122,6 +145,11 @@
                   <tr class="border-t border-[#E5F9FD80] text-sm">
                     <td class="lg:w-1/4 py-3 font-medium">Bags:</td>
                     <td class="lg:w-1/4 py-3"><p class="v-bags"></p></td>
+                  </tr>
+                  <td></td>
+                  <tr class="border-t border-[#E5F9FD80] text-sm">
+                    <td class="lg:w-1/4 py-3 font-medium">Direction:</td>
+                    <td class="lg:w-1/4 py-3"><p class="v-direction"></p></td>
                   </tr>
                   <td></td>
                 </tbody>
@@ -150,7 +178,7 @@
                   id="first_name"
                   class="w-full bg-[#E5F9FD] mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="first_name-errors"></p>
+                <p class="error-clor text-sm" id="first_name-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
               <!-- START INPUT GROUP -->
@@ -161,7 +189,7 @@
                   id="last_name"
                   class="w-full bg-[#E5F9FD] mt-1bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="last_name-errors"></p>
+                <p class="error-clor text-sm" id="last_name-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
               <!-- START INPUT GROUP -->
@@ -172,7 +200,7 @@
                   id="email"
                   class="w-full bg-[#E5F9FD] mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="email-errors"></p>
+                <p class="error-clor text-sm" id="email-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
               <!-- START INPUT GROUP -->
@@ -183,7 +211,7 @@
                   id="phone_number"
                   class="w-full bg-[#e5f9fd] placeholder:text-blue text-blue mt-1 bg-white px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="phone_number-errors"></p>
+                <p class="error-clor text-sm" id="phone_number-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
             </form>
@@ -199,62 +227,62 @@
             Journey Details
           </div>
           <div class="content p-4 py-12">
-            <form
+            <!-- <form
               action=""
               class="w-full grid grid-cols-1 lg:grid-cols-2 text-white gap-4"
-            >
+            > -->
+            <form action="" class="w-full text-white gap-4">
               <!-- START INPUT GROUP -->
               <div class="">
                 <label for="" class="">Flight Number</label>
                 <input
                   type="text"
                   id="flight_number"
-                  class="w-full bg-[#E5F9FD] mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
+                  class="w-full mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="flight_number-errors"></p>
+                <p class="error-clor text-sm" id="flight_number-errors"></p>
               </div>
               <!-- END INPUT GROUP -->
               <!-- START INPUT GROUP -->
-              <div class="">
+              <!-- <div class="">
                 <label for="" class="">Origin</label>
                 <input
                   type="text"
                   id="origin"
                   class="w-full bg-[#E5F9FD] mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="origin-errors"></p>
-              </div>
+                <p class="error-clor text-sm" id="origin-errors"></p>
+              </div> -->
               <!-- END INPUT GROUP -->
 
               <!-- START INPUT GROUP -->
-              <div class="col-span-2 w-full">
+              <!-- <div class="col-span-2 w-full">
                 <label for="" class="">Phone Number*</label>
                 <input
                   type="text"
                   id="phone_number2"
                   class="w-full bg-[#E5F9FD] mt-1 bg-[#e5f9fd] placeholder:text-blue text-blue px-3 py-2.5"
                 />
-                <p class="text-red-500 text-sm" id="phone_number2-errors"></p>
-              </div>
+                <p class="error-clor text-sm" id="phone_number2-errors"></p>
+              </div> -->
               <!-- END INPUT GROUP -->
               <div class="flex flex-row gap-2">
-
                 <button
-                type="button"
-                id="prev_button"
-                class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
+                  type="button"
+                  id="prev_button"
+                  class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
                 >
-                Prev
-              </button>
-              <button
-              type="button"
-              id="next_button"
-              class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
-              >
-              Next
-            </button>
-          </div>
-          </form>
+                  Prev
+                </button>
+                <button
+                  type="button"
+                  id="conform_button"
+                  class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
+                >
+                  Confirm
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <!-- END JOURNEY DETAILS -->
@@ -265,10 +293,10 @@
 
 <script defer>
   function initialize() {
-    const nextButton = document.getElementById("next_button");
+    const conformButton = document.getElementById("conform_button");
 
     function clearErrors() {
-      errors = document.getElementsByClassName("text-red-500");
+      errors = document.getElementsByClassName("error-clor");
       for (let item of errors) {
         item.innerHTML = "";
       }
@@ -277,11 +305,37 @@
       //sets error inside tag of id
       element = document.getElementById(id + "-errors").innerHTML = error;
     }
-
+    const carInfo = { name: "", price: "" };
     function setPayMentDetails() {
-      document.querySelectorAll(".v-name").forEach(span=> span.innerText= document.getElementById("first_name").value+" "+document.getElementById("last_name").value)
-      document.querySelectorAll(".v-email").forEach(span=> span.innerText= document.getElementById("email").value)
-      document.querySelectorAll(".v-phone_number").forEach(span=> span.innerText= document.getElementById("phone_number").value)
+      document
+        .querySelectorAll(".v-name")
+        .forEach(
+          (span) =>
+            (span.innerText =
+              document.getElementById("first_name").value +
+              " " +
+              document.getElementById("last_name").value)
+        );
+      document
+        .querySelectorAll(".v-email")
+        .forEach(
+          (span) => (span.innerText = document.getElementById("email").value)
+        );
+      document
+        .querySelectorAll(".v-phone_number")
+        .forEach(
+          (span) =>
+            (span.innerText = document.getElementById("phone_number").value)
+        );
+      document
+        .querySelectorAll(".v-flight_number")
+        .forEach(
+          (span) =>
+            (span.innerText = document.getElementById("flight_number").value)
+        );
+      document
+        .querySelectorAll(".v-car-type")
+        .forEach((span) => (span.innerText = carInfo.name));
 
       // document.getElementById("v-name").innerText =
       //   document.getElementById("first_name").value +
@@ -318,7 +372,95 @@
     //     document.getElementById("bags").value;
     // }
 
-    nextButton.addEventListener("click", () => {
+    const selectdCars = document.querySelectorAll(".select-car");
+    function colorLink() {
+      selectdCars.forEach((l) => {
+        console.log(l);
+        l.innerHTML = "select";
+        l.classList.add("bg-blue");
+        l.classList.remove("bg-green");
+        // l.parentElement.children[2].innerText = "select";
+        // l.parentElement.children[2].classList.add("bg-blue");
+        // l.parentElement.children[2].classList.remove("bg-green");
+      });
+
+      carInfo.name = this.parentElement.children[0].innerHTML;
+      // carInfo.price = this.parentElement.children[1].innerHTML;
+      this.innerHTML = "selectd";
+      this.classList.remove("bg-blue");
+      this.classList.add("bg-green");
+      // this.parentElement.children[2].innerHTML = "selectd";
+      // this.parentElement.children[2].classList.remove("bg-blue");
+      // this.parentElement.children[2].classList.add("bg-green");
+    }
+    selectdCars.forEach((l) => l.addEventListener("click", colorLink));
+
+    // const selectdCars = document.querySelectorAll(".select-car");
+    // selectdCars.forEach((car) => {
+    //   car.addEventListener("click", () => {
+    //     console.log("Perent", car.parentElement.children[0].innerHTML);
+    //     console.log("Perent", car.parentElement.children[1].innerHTML);
+    //     car.parentElement.children[2].innerHTML = "selectd";
+    //     car.parentElement.children[2].classList.remove("bg-blue");
+    //     car.parentElement.children[2].classList.add("bg-green");
+    //   });
+    // });
+    /** Confirm */
+    function submit() {
+      conformButton.disabled  =true
+      conformButton.innerText  ="Loading..."
+      // const car_Info = { name: "", price: "" };
+      // document.querySelectorAll(".select-car").forEach((l) => {
+      //   if (l.parentElement.children[2].innerHTML == "selectd") {
+      //     car_Info.name = l.parentElement.children[0].innerHTML;
+      //     car_Info.price = l.parentElement.children[1].innerHTML;
+      //   }
+      // });
+
+      const data = {
+        pickup: document.getElementById("pickup").value,
+        destination: document.getElementById("destination").value,
+
+        pickup_date: document.getElementById("pickup_date").value,
+        pickup_hour: document.getElementById("pickup_hour").value,
+        pickup_minutes: document.getElementById("pickup_minnutes").value,
+
+        return_date: document.getElementById("return_date").value,
+        return_hour: document.getElementById("return_hour").value,
+        return_minutes: document.getElementById("return_minnutes").value,
+
+        passengers: document.getElementById("passengers").value,
+        bags: document.getElementById("bags").value,
+        direction: document.getElementById("direction").value,
+        fitst_name: document.getElementById("first_name").value,
+        last_name: document.getElementById("last_name").value,
+        email: document.getElementById("email").value,
+        phone_number: document.getElementById("phone_number").value,
+        flight_number: document.getElementById("flight_number").value,
+        // origin: document.getElementById("origin").value,
+        // second_phone_number: document.getElementById("phone_number2").value,
+        car_type: carInfo.name,
+      };
+      fetch("https://api.sheetmonkey.io/form/65D9rz8RHT3drVygLuJGkY", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((result) => {
+        // console.log(result);
+        conformButton.disabled  =false
+      conformButton.innerText  ="Confirm"
+        document.getElementById("selectVehicle").classList.add("hidden");
+        document.getElementById("confromForm").classList.remove("hidden");
+        document.getElementById("step-4").classList.add("active");
+        document.getElementById("step-2").classList.remove("active");
+      }).catch((error)=>{
+        console.log("Error:",error.message);
+      });
+    }
+    /** End Confirm */
+    conformButton.addEventListener("click", () => {
       var returnval = true;
       clearErrors();
       const firstNameData = document.getElementById("first_name").value;
@@ -338,6 +480,11 @@
         seterror("email", "Email field is required.");
         returnval = false;
       }
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailData.match(mailformat)) {
+        seterror("email", "Email is not valid.");
+        returnval = false;
+      }
 
       const phoneNumberData = document.getElementById("phone_number").value;
       if (phoneNumberData === "") {
@@ -345,44 +492,48 @@
         returnval = false;
       }
 
-      const flightNumberData = document.getElementById("flight_number").value;
-      if (flightNumberData === "") {
-        seterror("flight_number", "Flight Number field is required.");
+      // const flightNumberData = document.getElementById("flight_number").value;
+      // if (flightNumberData === "") {
+      //   seterror("flight_number", "Flight Number field is required.");
+      //   returnval = false;
+      // }
+
+      // const originData = document.getElementById("origin").value;
+      // if (originData === "") {
+      //   seterror("origin", "Origin field is required.");
+      //   returnval = false;
+      // }
+
+      // const phoneNumber2Data = document.getElementById("phone_number2").value;
+      // if (phoneNumber2Data === "") {
+      //   seterror("phone_number2", "Phone Number field is required.");
+      //   returnval = false;
+      // }
+      // console.log("returnval", returnval);
+
+      if (carInfo.name == "") {
+        seterror("carInfo", "Pleae select a car.");
         returnval = false;
       }
-
-      const originData = document.getElementById("origin").value;
-      if (originData === "") {
-        seterror("origin", "Origin field is required.");
-        returnval = false;
-      }
-
-      const phoneNumber2Data = document.getElementById("phone_number2").value;
-      if (phoneNumber2Data === "") {
-        seterror("phone_number2", "Phone Number field is required.");
-        returnval = false;
-      }
-      console.log("returnval", returnval);
-
       if (returnval) {
-        document.getElementById("selectVehicle").classList.add("hidden");
-        document.getElementById("paymentDetails").classList.remove("hidden");
-        document.getElementById("step-3").classList.add("active");
-        document.getElementById("step-2").classList.remove("active");
-
         setPayMentDetails();
+        submit();
+        // document.getElementById("selectVehicle").classList.add("hidden");
+        // document.getElementById("paymentDetails").classList.remove("hidden");
+        // document.getElementById("step-3").classList.add("active");
+        // document.getElementById("step-2").classList.remove("active");
+
         // setDataInVehvileForm();
       }
     });
 
-
-    const  prevButton =document.getElementById("prev_button")
-    prevButton.addEventListener("click",()=>{
+    const prevButton = document.getElementById("prev_button");
+    prevButton.addEventListener("click", () => {
       document.getElementById("selectVehicle").classList.add("hidden");
-        document.getElementById("tripDetails").classList.remove("hidden");
-        document.getElementById("step-1").classList.add("active");
-        document.getElementById("step-2").classList.remove("active");
-    })
+      document.getElementById("tripDetails").classList.remove("hidden");
+      document.getElementById("step-1").classList.add("active");
+      document.getElementById("step-2").classList.remove("active");
+    });
   }
 
   initialize();

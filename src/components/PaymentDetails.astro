@@ -131,8 +131,8 @@
               </button>
         <button
           type="button"
-          id="confirm_button"
-          class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-5"
+          id="confirm_button_detail"
+          class="bg-black text-sm md:text-base text-white py-3 md:py-5 font-bold w-full mt-3"
         >
           Confirm
         </button>
@@ -144,15 +144,29 @@
 
 <script defer>
   function initialize() {
-    const confirmButton = document.getElementById("confirm_button");
+    const confirmButton = document.getElementById("confirm_button_detail");
 
     confirmButton.addEventListener("click", () => {
+      const car_Info ={name:"",price:""}
+      document.querySelectorAll(".select-car").forEach((l)=>{
+        if(l.parentElement.children[2].innerHTML=="selectd"){
+          car_Info.name = l.parentElement.children[0].innerHTML;
+          car_Info.price = l.parentElement.children[1].innerHTML;
+        }
+      })
+
       const data = {
         pickup: document.getElementById("pickup").value,
         destination: document.getElementById("destination").value,
+
         pickup_date: document.getElementById("pickup_date").value,
         pickup_hour: document.getElementById("pickup_hour").value,
-        pickup_minnutes: document.getElementById("pickup_minnutes").value,
+        pickup_minutes: document.getElementById("pickup_minnutes").value,
+
+        return_date: document.getElementById("pickup_date").value,
+        return_hour: document.getElementById("pickup_hour").value,
+        return_minutes: document.getElementById("pickup_minnutes").value,
+
         passengers: document.getElementById("passengers").value,
         bags: document.getElementById("bags").value,
         types: document.getElementById("types").value,
@@ -161,10 +175,10 @@
         email: document.getElementById("email").value,
         phone_number: document.getElementById("phone_number").value,
         flight_number: document.getElementById("flight_number").value,
-        origin: document.getElementById("origin").value,
-        second_phone_number: document.getElementById("phone_number2").value,
+        // origin: document.getElementById("origin").value,
+        // second_phone_number: document.getElementById("phone_number2").value,
+        car_type:car_Info.name,
       };
-
       fetch("https://api.sheetmonkey.io/form/vyAm4TXvDnBPJFy2Pwtzn4", {
         method: "POST",
         headers: {
@@ -178,6 +192,13 @@
         document.getElementById("step-4").classList.add("active");
         document.getElementById("step-3").classList.remove("active");
       });
+
+
+
+      document.getElementById("paymentDetails").classList.add("hidden");
+        document.getElementById("confromForm").classList.remove("hidden");
+        document.getElementById("step-4").classList.add("active");
+        document.getElementById("step-3").classList.remove("active");
     });
 
     const  prevButton1 =document.getElementById("prev_button1")

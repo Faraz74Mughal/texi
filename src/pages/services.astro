@@ -1,8 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
+<style>
+  .div-collpase {
+    height: 80px;
+    overflow: hidden;
+  }
+  .div-collpase.active {
+    height: auto;
+  }
+</style>
 <Layout title="Welcome to Astro.">
   <!-- SERVICES -->
   <section
@@ -16,7 +25,8 @@ import Card from '../components/Card.astro';
       >
         We have Wider Range of <br />Services for Our Passengers.
       </p>
-      <a  href="/booking"
+      <a
+        href="/booking"
         class="bg-[#B6E9FC]/50 py-2 md:py-4 lg:py-9 px-5 md:px-14 lg:px-24 rounded md:rounded-2xl font-medium text-[8px] md:text-base lg:text-3xl mt-10 md:mt-20 [backdrop-filter:blur(9px)]"
       >
         BOOK NOW
@@ -29,7 +39,7 @@ import Card from '../components/Card.astro';
     class="grid grid-cols-2 md:grid-cols-3 py-7 md:py-11 px-4 md:px-6 lg:px-[60px] lg:py-[82px] gap-5 md:gap-7 lg:gap-16 sm:container sm:mx-auto"
   >
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/plane-wing.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/plane-wing.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -38,7 +48,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/events.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/events.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -47,7 +57,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/premium-cars.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/premium-cars.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -56,7 +66,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/wedding-cars.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/wedding-cars.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -65,7 +75,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/minibus.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/minibus.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -74,7 +84,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/online-booking.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/online-booking.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -83,7 +93,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/meet-and-greet.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/meet-and-greet.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -92,7 +102,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/courier.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/courier.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -101,7 +111,7 @@ import Card from '../components/Card.astro';
       </div>
     </div>
     <div
-      class="aspect-square flex flex-col justify-end [background-image:url('/images/special-hire.png')]"
+      class="aspect-square flex flex-col justify-end [background-image:url('/images/special-hire.png')] bg-cover bg-no-repeat"
     >
       <div
         class="py-3 md:py-[14px] md:text-base text-xs [backdrop-filter:blur(4px)] text-center font-semibold text-white bg-blue/50"
@@ -112,53 +122,26 @@ import Card from '../components/Card.astro';
   </section>
 
   <!-- FAQ -->
-  <section class="faq px-3 md:px-6 py-8 md:py-[82px] pt-3 md:pt-10 sm:container sm:mx-auto">
+  <section
+    class="faq px-3 md:px-6 py-8 md:py-[82px] pt-3 md:pt-10 sm:container sm:mx-auto"
+  >
     <h2 class="text-blue text-2xl md:text-3xl pl-1 font-semibold">FAQS</h2>
     <hr class="w-1/2 h-[2px] mt-2 bg-blue/50" />
     <!-- faq -->
     <section class="faqs">
       <div class="py-5 md:py-10">
         <div class="space-y-8">
-          <div class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD]">
+          <div
+            class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD] div-collpase"
+          >
             <button class="flex items-center justify-between w-full p-4 md:p-6">
               <h1 class="font-semibold text-xs md:text-base text-blue">
                 Q: What area do you covers?
               </h1>
 
-              <span class="text-blue border-2 border-blue rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M18 12H6"></path>
-                </svg>
-              </span>
-            </button>
-
-            <hr class="border-gray-200" />
-
-            <p class="p-4 md:p-6 lg:p-8 text-xs md:text-sm text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-              eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum
-              laboriosam recusandae facere dolorum veniam quia pariatur
-              obcaecati illo ducimus?
-            </p>
-          </div>
-
-          <div class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD]">
-            <button class="flex items-center justify-between w-full p-4 md:p-6">
-              <h1 class="font-semibold text-xs md:text-base text-blue">
-                Q: What area do you covers?
-              </h1>
-
-              <span class="text-blue border-2 border-blue rounded-full">
+              <span
+                class="text-blue border-2 border-blue rounded-full btn-collpase"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6"
@@ -174,9 +157,154 @@ import Card from '../components/Card.astro';
                 </svg>
               </span>
             </button>
+
+            <hr class="border-gray-200" />
+
+            <p class="p-4 md:p-6 lg:p-8 text-xs md:text-sm text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum
+              laboriosam recusandae facere dolorum veniam quia pariatur
+              obcaecati illo ducimus?
+            </p>
+          </div>
+
+          <div
+            class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD] div-collpase"
+          >
+            <button class="flex items-center justify-between w-full p-4 md:p-6">
+              <h1 class="font-semibold text-xs md:text-base text-blue">
+                Q: What area do you covers?
+              </h1>
+
+              <span
+                class="text-blue border-2 border-blue rounded-full btn-collpase"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+              </span>
+            </button>
+            <hr class="border-gray-200" />
+
+            <p class="p-4 md:p-6 lg:p-8 text-xs md:text-sm text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum
+              laboriosam recusandae facere dolorum veniam quia pariatur
+              obcaecati illo ducimus?
+            </p>
+          </div>
+
+          <div
+            class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD] div-collpase"
+          >
+            <button class="flex items-center justify-between w-full p-4 md:p-6">
+              <h1 class="font-semibold text-xs md:text-base text-blue">
+                Q: What area do you covers?
+              </h1>
+
+              <span
+                class="text-blue border-2 border-blue rounded-full btn-collpase"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+              </span>
+            </button>
+            <hr class="border-gray-200" />
+
+            <p class="p-4 md:p-6 lg:p-8 text-xs md:text-sm text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum
+              laboriosam recusandae facere dolorum veniam quia pariatur
+              obcaecati illo ducimus?
+            </p>
+          </div>
+
+          <div
+            class="border-2 border-blue/50 rounded-lg bg-[#E5F9FD] div-collpase"
+          >
+            <button class="flex items-center justify-between w-full p-4 md:p-6">
+              <h1 class="font-semibold text-xs md:text-base text-blue">
+                Q: What area do you covers?
+              </h1>
+
+              <span
+                class="text-blue border-2 border-blue rounded-full btn-collpase"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+              </span>
+            </button>
+            <hr class="border-gray-200" />
+
+            <p class="p-4 md:p-6 lg:p-8 text-xs md:text-sm text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum
+              laboriosam recusandae facere dolorum veniam quia pariatur
+              obcaecati illo ducimus?
+            </p>
           </div>
         </div>
       </div>
     </section>
   </section>
 </Layout>
+
+<script defer>
+  function init() {
+    const btnCollapse = document.querySelectorAll(".btn-collpase");
+    btnCollapse.forEach((e) => {
+      e.addEventListener("click", function () {
+        if(!this.parentElement.parentElement.matches(".active")){
+
+          btnCollapse.forEach((x) => {
+            x.parentElement.parentElement.classList.remove("active");
+            x.children[0].children[0].setAttribute(
+              "d",
+              "M12 6v6m0 0v6m0-6h6m-6 0H6"
+              );
+            });
+          }
+        this.parentElement.parentElement.classList.toggle("active");
+        if (this.children[0].children[0].getAttribute("d") == "M18 12H6")
+          this.children[0].children[0].setAttribute(
+            "d",
+            "M12 6v6m0 0v6m0-6h6m-6 0H6"
+          );
+        else this.children[0].children[0].setAttribute("d", "M18 12H6");
+      });
+    });
+  }
+  window.onload = init();
+</script>

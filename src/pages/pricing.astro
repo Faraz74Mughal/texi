@@ -16,89 +16,8 @@ import Layout from "../layouts/Layout.astro";
   <section class="form py-10">
     <div class="container  lg:px-20 lg:pl-0 mx-auto">
       <div class="lg:flex lg:w-full md:w-full rounded-lg items-center">
-        <div class="lg:w-3/5 flex justify-center md:w-full p-5 bg-[#E5F9FD]">
-          <form class="w-full">
-            <div class="w-full relative">
-              <div class="flex flex-col justify-items-center mb-4 text-center">
-                <h3 class="font-bold text-3xl">Get an instant quote</h3>
-              </div>
-              <div class="flex flex-col justify-items-center text-center mb-6">
-                <h4 class="text-xl">Quote & Book</h4>
-              </div>
-              <div
-                class="px-5 lg:px-8 flex flex-col gap-4 lg:gap-10 py-4 md:py-8 lg:py-10"
-              >
-                <div class="flex flex-col items-end gap-2 md:gap-5">
-                  <div class="input-group w-full">
-                    <input
-                      type="text"
-                      class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue border"
-                      placeholder="Enter pickup location"
-                      x-model="formData.pickup"
-                      id="pickup"
-                      name="pickup"
-                    />
-                    <p class="text-red-500 text-sm" id="pickup-errors"></p>
-                  </div>
-
-                  <div class="input-group w-full">
-                    <input
-                      type="text"
-                      class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue border"
-                      placeholder="Enter drop location"
-                      x-model="formData.drop"
-                      id="drop"
-                      name="drop"
-                    />
-                    <p class="text-red-500 text-sm" id="pickup-errors"></p>
-                  </div>
-                  <div class="flex flex-row gap-2">
-                    <div class="input-group w-full">
-                      <input
-                        type="date"
-                        class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue border"
-                        placeholder="Enter pickup location"
-                        x-model="formData.pickup"
-                        id="pickup"
-                        name="pickup"
-                      />
-                      <p class="text-red-500 text-sm" id="pickup-errors"></p>
-                    </div>
-                    <div class="input-group w-full">
-                      <input
-                        type="text"
-                        class="py-3 lg:py-5 px-5 md:px-6 lg:px-5 text-center w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue border"
-                        placeholder="12"
-                        x-model="formData.pickup"
-                        id="pickup"
-                        name="pickup"
-                      />
-                      <p class="text-red-500 text-sm" id="pickup-errors"></p>
-                    </div>
-                    <div class="input-group w-full">
-                      <input
-                        type="text"
-                        class="py-3 lg:py-5 px-5 md:px-6 lg:px-5 text-center w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue border"
-                        placeholder="00"
-                        x-model="formData.pickup"
-                        id="pickup"
-                        name="pickup"
-                      />
-                      <p class="text-red-500 text-sm" id="pickup-errors"></p>
-                    </div>
-                  </div>
-                  <div class="input-group w-full">
-                    <button
-                      class="w-full bg-blue text-sm md:text-base text-white py-3 md:py-5 font-bold js-submit-user"
-                      >Calculate Price</button
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="lg:w-3/5 flex justify-center md:w-full  flex-col px-10 py-10">
+      
+        <div class="lg:w-full flex justify-center text-center md:w-full  flex-col px-10 py-10">
             <h3
             class="font-bold text-3xl font-poppins"
           >
@@ -106,7 +25,7 @@ import Layout from "../layouts/Layout.astro";
             BOOKING WEBSITE
             </h3>
             <p
-            class="text-xl text-left mt-10 "
+            class="text-xl text-center mt-10 "
           >
             Lorem ipsum dolor sit
             amet, consectetur
@@ -124,22 +43,22 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="cards sm:container sm:mx-auto my-5">
+  <section class="cards sm:container sm:mx-auto my-5 mb-12 ">
     <div class="our-drivers flex flex-col md:flex-row">
         <!-- text -->
         <div
-          class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
+          class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-15 px-10 lg:px-[73px]"
         >
           <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
             OUR<br class="md:hidden" />
             <span class="text-blue">DRIVERS</span>
           </h5>
-          <p class="text-[14px] lg:text-[28px] mt-10 lg:mt-20 mb-5 lg:mb-10">
+          <p class="text-[14px] lg:text-[24px] xl:text-[28px] mt-10 lg:mt-5 mb-5 lg:mb-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud
           </p>
-          <p class="text-[14px] lg:text-[28px]">
+          <p class="text-[14px] lg:text-[24px] xl:text-[28px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor
           </p>

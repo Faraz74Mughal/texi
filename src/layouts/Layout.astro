@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const pathName = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -29,16 +30,16 @@ const { title } = Astro.props;
       function SlideNumber(Splide, Components) {
         function mount() {
           update();
-          Splide.on('move', update);
+          Splide.on("move", update);
         }
 
         function update() {
-          document.querySelector('#currentSlide').textContent =
+          document.querySelector("#currentSlide").textContent =
             Splide.index + 1;
-          document.querySelector('#totalSlides').textContent = Splide.length;
-          document.querySelector('#currentMobileSlide').textContent =
+          document.querySelector("#totalSlides").textContent = Splide.length;
+          document.querySelector("#currentMobileSlide").textContent =
             Splide.index + 1;
-          document.querySelector('#totalMobileSlides').textContent =
+          document.querySelector("#totalMobileSlides").textContent =
             Splide.length;
         }
 
@@ -46,9 +47,9 @@ const { title } = Astro.props;
           mount,
         };
       }
-      document.addEventListener('DOMContentLoaded', function () {
-        splide = new Splide('.splide', {
-          type: 'loop',
+      document.addEventListener("DOMContentLoaded", function () {
+        splide = new Splide(".splide", {
+          type: "loop",
           autoplay: true,
           arrows: false,
           pagination: false,
@@ -56,7 +57,15 @@ const { title } = Astro.props;
 
         splide.mount({ SlideNumber });
       });
+      document.addEventListener("DOMContentLoaded", function () {
+        var splide = new Splide(".asplide", {
+          type: "loop",
+          drag: "free",
+          perPage: 2,
+        });
 
+        splide.mount();
+      });
       function goTo(direction) {
         splide.go(direction);
       }
@@ -68,35 +77,36 @@ const { title } = Astro.props;
       (function () {
         var setting = {
           zoom: 11,
-          queryString: 'Nairobi, Kenya',
-          place_id: 'ChIJp0lN2HIRLxgRTJKXslQCz_c',
+          queryString: "Nairobi, Kenya",
+          place_id: "ChIJp0lN2HIRLxgRTJKXslQCz_c",
           satellite: false,
           centerCoord: [-1.3032127252997825, 36.84739688764218],
-          cid: '0xf7cf0254b297924c',
-          lang: 'en',
-          cityUrl: '/kenya/nairobi-222',
-          cityAnchorText: 'Map of Nairobi, Nakuru, Kenya',
-          id: 'map-9cd199b9cc5410cd3b1ad21cab2e54d3',
-          embed_id: '829131',
+          cid: "0xf7cf0254b297924c",
+          lang: "en",
+          cityUrl: "/kenya/nairobi-222",
+          cityAnchorText: "Map of Nairobi, Nakuru, Kenya",
+          id: "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+          embed_id: "829131",
         };
         var d = document;
-        var s = d.createElement('script');
-        s.src = 'https://1map.com/js/script-for-user.js?embed_id=829131';
+        var s = d.createElement("script");
+        s.src = "https://1map.com/js/script-for-user.js?embed_id=829131";
         s.async = true;
         s.onload = function (e) {
           // GETTING CONTAINER HEIGHT
           const { clientHeight, clientWidth } =
-            document.querySelector('#mapContainer');
+            document.querySelector("#mapContainer");
 
           //SETTING HEIGHT FROM CONTAINER
           setting.height = clientHeight;
           setting.width = clientWidth;
           window.OneMap.initMap(setting);
         };
-        var to = d.getElementsByTagName('script')[0];
+        var to = d.getElementsByTagName("script")[0];
         to.parentNode.insertBefore(s, to);
       })();
     </script>
+    <script></script>
     <script
       is:inline
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRgUr5f49dnAb0Ub1vWtliyIfRqDqp3LQ&libraries=places"
@@ -108,7 +118,6 @@ const { title } = Astro.props;
       id="mobileNav"
       class="mobile-nav hidden lg:hidden fixed top-0 left-0 min-h-full w-full bg-white z-50"
     >
-    
       <div
         style="
           background-image: url('/images/menubg.png');
@@ -125,39 +134,42 @@ const { title } = Astro.props;
         </div>
       </div>
       <!-- welcome -->
-              <!-- NAV TOGGLE -->
-              <div class="bg-[#E5F9FD] py-4 text-blue p-10 flex items-center justify-between">
+      <!-- NAV TOGGLE -->
+      <div
+        class="bg-[#E5F9FD] py-4 text-blue p-10 flex items-center justify-between"
+      >
         <button id="navToggle" onclick="closeNav()" class="lg:hidden">
           <img src="/images/menu.svg" class="h-9 aspect-square" alt="" />
         </button>
-        <p class=" text-center">
-
-          Welcome to Taxi Boooking
-        </p>
-        <p class="">
-        </p>
+        <p class="text-center">Welcome to Taxi Boooking</p>
+        <p class=""></p>
       </div>
 
       <!-- links -->
       <nav class="flex flex-col gap-9 p-10">
         <li class="list-none text-xl">
           <a
-            class="flex items-center gap-6 text-blue"
+            class={`flex items-center gap-6 ${
+              pathName == "/" ? "text-blue" : ""
+            }`}
             onclick="closeNav()"
-            href="/index"><img src="/images/house.png" alt="" />Home</a
+            href="/"><img src="/images/house.png" alt="" />Home</a
           >
         </li>
         <li class="list-none text-xl">
           <a
-            class="flex items-center gap-6 text-blue"
+            class={`flex items-center gap-6 ${
+              pathName == "/fleet" ? "text-blue" : ""
+            }`}
             onclick="closeNav()"
-            href="/fleet"
-            ><img src="/images/blue-car.png" alt="" />Fleets</a
+            href="/fleet"><img src="/images/blue-car.png" alt="" />Fleets</a
           >
         </li>
         <li class="list-none text-xl">
           <a
-            class="flex items-center gap-6 text-blue"
+            class={`flex items-center gap-6 ${
+              pathName == "/pricing" ? "text-blue" : ""
+            }`}
             onclick="closeNav()"
             href="/pricing"
             ><img src="/images/blue-dollar.png" alt="" />Pricing</a
@@ -165,7 +177,19 @@ const { title } = Astro.props;
         </li>
         <li class="list-none text-xl">
           <a
-            class="flex items-center gap-6 text-blue"
+            class={`flex items-center gap-6 ${
+              pathName == "/booking" ? "text-blue" : ""
+            }`}
+            onclick="closeNav()"
+            href="/booking"
+            ><img src="/images/blue-booking.png" alt="" />Booking</a
+          >
+        </li>
+        <li class="list-none text-xl">
+          <a
+            class={`flex items-center gap-6 ${
+              pathName == "/generic" ? "text-blue" : ""
+            }`}
             onclick="closeNav()"
             href="/generic"
             ><img src="/images/blue-circles.png" alt="" />About</a
@@ -173,7 +197,9 @@ const { title } = Astro.props;
         </li>
         <li class="list-none text-xl">
           <a
-            class="flex items-center gap-6 text-blue"
+            class={`flex items-center gap-6 ${
+              pathName == "/services" ? "text-blue" : ""
+            }`}
             onclick="closeNav()"
             href="/services"
             ><img src="/images/blue-car.png" alt="" />Services</a
@@ -195,40 +221,74 @@ const { title } = Astro.props;
         <!-- LOGO -->
         <div class="logo flex items-center gap-5">
           <img src="/images/logo.png" alt="" class="h-6 md:h-12" />
-          <a href="/"><span class="text-blue font-medium text-xs md:text-2xl">Company</span></a>
+          <a href="/"
+            ><span class="text-blue font-medium text-xs md:text-2xl"
+              >Company</span
+            >
+          </a>
         </div>
 
         <!-- NAVIGATION -->
-        <nav class="items-center flex gap-24">
+        <nav class="items-center flex xl:gap-24 lg:gap-12">
           <li class="list-none text-xl hidden lg:block">
             <a
-              class="flex items-center gap-6 text-blue"
+              class={`flex items-center gap-6 ${
+                pathName == "/" ? "text-blue" : ""
+              }`}
               onclick="closeNav()"
               href="/">Home</a
             >
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/fleet">Fleets</a>
+            <a
+              class={`flex items-center ${
+                pathName == "/fleet" ? "text-blue" : ""
+              }`}
+              href="/fleet">Fleets</a
+            >
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/pricing">Pricing</a>
+            <a
+              class={`flex items-center ${
+                pathName == "/pricing" ? "text-blue" : ""
+              }`}
+              href="/pricing">Pricing</a
+            >
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/generic">About</a>
+            <a
+              class={`flex items-center ${
+                pathName == "/booking" ? "text-blue" : ""
+              }`}
+              href="/booking">Booking</a
+            >
           </li>
           <li class="list-none text-xl hidden lg:block">
-            <a href="/services">Services</a>
+            <a
+              class={`flex items-center ${
+                pathName == "/about" ? "text-blue" : ""
+              }`}
+              href="/generic">About</a
+            >
+          </li>
+          <li class="list-none text-xl hidden lg:block">
+            <a
+              class={`flex items-center ${
+                pathName == "/services" ? "text-blue" : ""
+              }`}
+              href="/services">Services</a
+            >
           </li>
 
-          <div class="flex items-center gap-5">
-            <button>
+          <!-- <div class="flex items-center gap-5"> -->
+          <!-- <button>
               <img src="/images/search.png" alt="" class="" />
             </button>
 
             <button>
               <img src="/images/bell.png" alt="" class="" />
-            </button>
-          </div>
+            </button> -->
+          <!-- </div> -->
         </nav>
       </div>
     </header>
@@ -246,38 +306,45 @@ const { title } = Astro.props;
           Lets Travel With Us
         </div>
       </div>
-      <div
-        class="site-container bg-[#80B8DA] text-white py-3  "
-      >
-      <div class="sm:container sm:mx-auto px-7 md:px-11 lg:px-16 flex gap-3 md:gap-14">
-
-        <img
-        src="/images/facebook.png"
-          alt=""
-          class="h-4 md:h-5 aspect-square"
-        />
-        <img
-        src="/images/linkedin.png"
-        alt=""
-        class="h-4 md:h-5 aspect-square"
-        />
-        <img
-          src="/images/instagram.png"
-          alt=""
-          class="h-4 md:h-5 aspect-square"
-          />
-          <img
-          src="/images/twitter.png"
-          alt=""
-          class="h-4 md:h-5 aspect-square"
-          />
+      <div class="site-container bg-[#80B8DA] text-white py-3">
+        <div
+          class="sm:container sm:mx-auto px-7 md:px-11 lg:px-16 flex gap-3 md:gap-14"
+        >
+          <a href="https://www.facebook.com/">
+            <img
+              src="/images/facebook.png"
+              alt=""
+              class="h-4 md:h-5 aspect-square"
+            />
+          </a>
+          <a href="https://www.linkedin.com/">
+            <img
+              src="/images/linkedin.png"
+              alt=""
+              class="h-4 md:h-5 aspect-square"
+            />
+          </a>
+          <a href="https://www.instagram.com/">
+            <img
+              src="/images/instagram.png"
+              alt=""
+              class="h-4 md:h-5 aspect-square"
+            />
+          </a>
+          <a href="https://twitter.com/">
+            <img
+              src="/images/twitter.png"
+              alt=""
+              class="h-4 md:h-5 aspect-square"
+            />
+          </a>
         </div>
       </div>
 
       <footer
         class="site-container grid grid-cols-1 md:grid-cols-5 py-12 gap-10 items-end sm:container sm:mx-auto px-7 md:px-11 lg:px-16"
       >
-        <div class="brand md:col-span-2  md:px-0">
+        <div class="brand md:col-span-2 md:px-0">
           <img
             src="/images/logo-big.png"
             class="w-[88px] lg:w-[166px]"
@@ -297,19 +364,22 @@ const { title } = Astro.props;
             class="text-lg lg:text-2xl font-medium text-[#80B8DA] md:text-[#7A7A7A] flex flex-col gap-3"
           >
             <li>
-              <a href="">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="">Fleets</a>
+              <a href="/fleets">Fleets</a>
             </li>
             <li>
-              <a href="">Destination</a>
+              <a href="/pricing">Pricing</a>
             </li>
             <li>
-              <a href="">Generic</a>
+              <a href="/booking">Booking</a>
             </li>
             <li>
-              <a href="">Services</a>
+              <a href="/generic">About</a>
+            </li>
+            <li>
+              <a href="/services">Services</a>
             </li>
           </ul>
         </nav>

@@ -3,10 +3,16 @@ import { minutes } from "../data/minutes.json";
 import { hour } from "../data/hour.json";
 ---
 
+<style>
+  .error-clor {
+    color: #f7cdcd;
+  }
+</style>
+
 <section
   x-show="active===1"
   id="tripDetails"
-  class="booking-form-1 flex flex-col items-center md:items-start md:flex-row gap-10 lg:gap-[76px] pb-14 px-6 lg:px-10 sm:container sm:mx-auto"
+  class="booking-form-1 flex flex-col items-center md:items-start md:flex-row gap-10 lg:gap-[76px] pb-14 px-6 lg:px-10 sm:container sm:mx-auto "
 >
   <div class="form-area w-[90%] mt-5 md:mt-0 md:w-1/2 bg-blue">
     <p
@@ -27,7 +33,7 @@ import { hour } from "../data/hour.json";
             id="pickup"
             name="pickup"
           />
-          <p class="text-red-500 text-sm" id="pickup-errors"></p>
+          <p class="error-clor text-sm" id="pickup-errors"></p>
         </div>
         <!-- START DESTINATION -->
         <div class="input-group flex gap-2 w-full flex-col relative">
@@ -38,7 +44,7 @@ import { hour } from "../data/hour.json";
             x-model="formData.destination"
             placeholder="Enter dropoff location"
           />
-          <p class="text-red-500 text-sm" id="destination-errors"></p>
+          <p class="error-clor text-sm" id="destination-errors"></p>
         </div>
         <!-- END DESTINATION -->
 
@@ -68,7 +74,7 @@ import { hour } from "../data/hour.json";
             <div class="w-full">
               <input
                 type="date"
-                class="py-3 lg:py-5 px-5 lg:px-11 outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+                class="py-3 lg:py-5 px-5 lg:w-[250px] md:w-[180px] outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
                 x-model="formData.pickup_date"
                 id="pickup_date"
                 placeholder="Enter Pickup Date"
@@ -137,7 +143,91 @@ import { hour } from "../data/hour.json";
               </div>
             </div>
           </div>
-          <p class="text-red-500 text-sm" id="pickup_date-errors"></p>
+          <p class="error-clor text-sm" id="pickup_date-errors"></p>
+        </div>
+      </div>
+
+      <div class="hidden flex-col items-end gap-3 md:gap-5" id="return-date">
+        <div class="input-group w-full">
+          <label
+            for=""
+            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            >Return Date & Time</label
+          >
+          <div class="flex items-center bg-[#e5f9fd] mt-1 md:mt-3">
+            <div class="w-full">
+              <input
+                type="date"
+                class="py-3 lg:py-5 px-5 lg:w-[250px] md:w-[180px] outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+                x-model="formData.pickup_date"
+                id="return_date"
+                placeholder="Enter Pickup Date"
+              />
+            </div>
+
+            <div class="selects flex w-[45%]">
+              <div class="relative w-1/2 border-l-2 border-blue text-blue">
+                <!-- START PICKUP TIME -->
+
+                <select
+                  class="block absolute appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-xl w-full h-full py-3 lg:py-5 px-1 focus:outline-none"
+                  x-model="formData.hour"
+                  id="return_hour"
+                >
+                  {
+                    hour.map((x) => {
+                      return <option selected={x == "12"}>{x}</option>;
+                    })
+                  }
+                </select>
+
+                <!-- END PICKUP TIME -->
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-blue h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="relative w-1/2 border-l-2 border-blue">
+                <!-- START HOUR -->
+                <select
+                  class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-xl py-3 lg:py-5 px-1 leading-tight focus:outline-none"
+                  id="return_minnutes"
+                  x-model="formData.min"
+                >
+                  {
+                    minutes.map((x) => {
+                      return <option>{x}</option>;
+                    })
+                  }
+                </select>
+                <!-- END PICKUP HOUR -->
+
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-blue h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="error-clor text-sm" id="return_date-errors"></p>
         </div>
       </div>
       <!-- passangers and bags -->
@@ -146,7 +236,7 @@ import { hour } from "../data/hour.json";
           <label
             for=""
             class="text-white text-sm md:text-base lg:text-3xl font-semibold"
-            >Passangers</label
+            >Passengers</label
           >
           <div class="relative w-full border-l-2 border-blue">
             <!-- START PASSENGER SELECT -->
@@ -166,7 +256,7 @@ import { hour } from "../data/hour.json";
                 <option>7</option>
                 <option>8</option>
               </select>
-              <p class="text-red-500 text-sm" id="passengers-errors"></p>
+              <p class="error-clor text-sm" id="passengers-errors"></p>
             </div>
 
             <!-- END PASSENGER SELECT -->
@@ -205,7 +295,7 @@ import { hour } from "../data/hour.json";
                 <option>None</option>
                 <option>1</option>
               </select>
-              <p class="text-red-500 text-sm" id="bags-errors"></p>
+              <p class="error-clor text-sm" id="bags-errors"></p>
             </div>
 
             <!-- END LUGGAGE -->
@@ -229,15 +319,20 @@ import { hour } from "../data/hour.json";
 
       <!-- one way -->
       <div class="relative w-full">
+        <label
+        for=""
+        class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+        >Direction</label
+      >
         <select
-          class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-5 lg:px-11 leading-tight focus:outline-none"
-          id="types"
+          class="mt-3 block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-5 lg:px-11 leading-tight focus:outline-none"
+          id="direction"
           x-model="formData.type"
         >
           <option value="one-way">One way</option>
-          <option value="two-way">Two way</option>
+          <option value="return">Return</option>
         </select>
-        <p class="text-red-500 text-sm" id="types-errors"></p>
+        <p class="error-clor text-sm" id="direction-errors"></p>
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
         >
@@ -306,6 +401,8 @@ import { hour } from "../data/hour.json";
     var reserveNow = document.getElementById("reserve_now");
     var pickUp = document.getElementById("pickup");
     var destination = document.getElementById("destination");
+    var returnDateDiv = document.getElementById("return-date");
+    var directionChange = document.getElementById("direction");
 
     new google.maps.places.Autocomplete(pickUp);
     new google.maps.places.Autocomplete(destination);
@@ -320,7 +417,6 @@ import { hour } from "../data/hour.json";
       //sets error inside tag of id
       element = document.getElementById(id + "-errors").innerHTML = error;
     }
-
     function setDataInVehvileForm() {
       // document.getElementById("v-from").innerText =
       //   document.getElementById("pickup").value;
@@ -332,22 +428,77 @@ import { hour } from "../data/hour.json";
       //   document.getElementById("pickup_date").value;
 
       //document.getElementById("v-p-time").innerText =
-        // document.getElementById("pickup_hour").value +
-        // ":" +
-        // document.getElementById("pickup_minnutes").value;
-        document.querySelectorAll(".v-from").forEach(span=> span.innerHTML= document.getElementById("pickup").value)
-        document.querySelectorAll(".v-to").forEach(span=> span.innerHTML= document.getElementById("destination").value)
-        document.querySelectorAll(".v-p-date").forEach(span=> span.innerHTML= document.getElementById("pickup_date").value)
-        document.querySelectorAll(".v-p-time").forEach(span=> span.innerHTML= document.getElementById("pickup_hour").value+":"+document.getElementById("pickup_minnutes").value)
-        document.querySelectorAll(".v-passengers").forEach(span=> span.innerHTML= document.getElementById("passengers").value)
-        document.querySelectorAll(".v-bags").forEach(span=> span.innerHTML= document.getElementById("bags").value)
+      // document.getElementById("pickup_hour").value +
+      // ":" +
+      // document.getElementById("pickup_minnutes").value;
+      document
+        .querySelectorAll(".v-from")
+        .forEach(
+          (span) => (span.innerHTML = document.getElementById("pickup").value)
+        );
+      document
+        .querySelectorAll(".v-to")
+        .forEach(
+          (span) =>
+            (span.innerHTML = document.getElementById("destination").value)
+        );
+      // document
+      //   .querySelectorAll(".v-p-date")
+      //   .forEach(
+      //     (span) =>
+      //       (span.innerHTML = document.getElementById("pickup_date").value)
+      //   );
+      document
+        .querySelectorAll(".v-p-date")
+        .forEach(
+          (span) =>
+            (span.innerHTML = document.getElementById("pickup_date").value+" "+
+              document.getElementById("pickup_hour").value +
+              ":" +
+              document.getElementById("pickup_minnutes").value)
+        );
+
+        document
+        .querySelectorAll(".v-r-date")
+        .forEach(
+          (span) =>
+            (span.innerHTML = document.getElementById("return_date").value+" "+
+              document.getElementById("return_hour").value +
+              ":" +
+              document.getElementById("return_minnutes").value)
+        );
+      document
+        .querySelectorAll(".v-passengers")
+        .forEach(
+          (span) =>
+            (span.innerHTML = document.getElementById("passengers").value)
+        );
+      document
+        .querySelectorAll(".v-bags")
+        .forEach(
+          (span) => (span.innerHTML = document.getElementById("bags").value)
+        );
+        document
+        .querySelectorAll(".v-direction")
+        .forEach(
+          (span) => (span.innerHTML = document.getElementById("direction").value)
+        );
       // document.getElementById("v-passengers").innerText =
       //   document.getElementById("passengers").value;
 
       // document.getElementById("v-bags").innerText =
       //   document.getElementById("bags").value;
     }
-
+    direction.addEventListener("change", (e) => {
+      if (e.target.value == "return") {
+        returnDateDiv.classList.remove("hidden");
+        returnDateDiv.classList.add("flex");
+      } else {
+        console.log("WROK");
+        returnDateDiv.classList.add("hidden");
+        returnDateDiv.classList.remove("flex");
+      }
+    });
     reserveNow.addEventListener("click", () => {
       var returnval = true;
       clearErrors();
@@ -381,14 +532,22 @@ import { hour } from "../data/hour.json";
         returnval = false;
       }
 
-      const typeData = document.getElementById("types").value;
+      const typeData = document.getElementById("direction").value;
       if (typeData === "") {
-        seterror("types", "Type field is required.");
+        seterror("direction", "Type field is required.");
         returnval = false;
       }
 
+      if (typeData === "return") {
+        const return_dateData = document.getElementById("return_date").value;
+        if (return_dateData === "") {
+          seterror("return_date", "Return Date field is required.");
+          returnval = false;
+        }
+      }
+
       if (returnval) {
-        console.log("TEST-VIDEO",document.getElementById("pickup").value)
+        console.log("TEST-VIDEO", document.getElementById("pickup").value);
         document.getElementById("tripDetails").classList.add("hidden");
         document.getElementById("selectVehicle").classList.remove("hidden");
         document.getElementById("step-2").classList.add("active");

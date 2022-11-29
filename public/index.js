@@ -9,4 +9,4 @@ function closeNav() {
 }
 
 // SET DATE INPUT TO TODAY
-document.querySelector("#dateInput").valueAsDate = new Date();
+// document.querySelector("#dateInput").valueAsDate = new Date();
