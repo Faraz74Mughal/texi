@@ -159,7 +159,7 @@ const pathName = Astro.url.pathname;
         <li class="list-none text-xl">
           <a
             class={`flex items-center gap-6 ${
-              pathName == "/fleet" ? "text-blue" : ""
+              pathName == "/fleet"||pathName == "/fleet/" ? "text-blue" : ""
             }`}
             onclick="closeNav()"
             href="/fleet"><img src="/images/blue-car.png" alt="" />Fleets</a
@@ -168,7 +168,7 @@ const pathName = Astro.url.pathname;
         <li class="list-none text-xl">
           <a
             class={`flex items-center gap-6 ${
-              pathName == "/pricing" ? "text-blue" : ""
+              pathName == "/pricing"||pathName == "/pricing/" ? "text-blue" : ""
             }`}
             onclick="closeNav()"
             href="/pricing"
@@ -178,7 +178,7 @@ const pathName = Astro.url.pathname;
         <li class="list-none text-xl">
           <a
             class={`flex items-center gap-6 ${
-              pathName == "/booking" ? "text-blue" : ""
+              pathName == "/booking"||pathName == "/booking/" ? "text-blue" : ""
             }`}
             onclick="closeNav()"
             href="/booking"
@@ -188,7 +188,7 @@ const pathName = Astro.url.pathname;
         <li class="list-none text-xl">
           <a
             class={`flex items-center gap-6 ${
-              pathName == "/generic" ? "text-blue" : ""
+              pathName == "/generic"|| pathName == "/generic/" ? "text-blue" : ""
             }`}
             onclick="closeNav()"
             href="/generic"
@@ -198,7 +198,7 @@ const pathName = Astro.url.pathname;
         <li class="list-none text-xl">
           <a
             class={`flex items-center gap-6 ${
-              pathName == "/services" ? "text-blue" : ""
+              pathName == "/services"||pathName == "/services/" ? "text-blue" : ""
             }`}
             onclick="closeNav()"
             href="/services"
@@ -242,7 +242,7 @@ const pathName = Astro.url.pathname;
           <li class="list-none text-xl hidden lg:block">
             <a
               class={`flex items-center ${
-                pathName == "/fleet" ? "text-blue" : ""
+                pathName == "/fleet" ||pathName == "/fleet/"? "text-blue" : ""
               }`}
               href="/fleet">Fleets</a
             >
@@ -250,7 +250,7 @@ const pathName = Astro.url.pathname;
           <li class="list-none text-xl hidden lg:block">
             <a
               class={`flex items-center ${
-                pathName == "/pricing" ? "text-blue" : ""
+                pathName == "/pricing"|| pathName == "/pricing" ? "text-blue" : ""
               }`}
               href="/pricing">Pricing</a
             >
@@ -258,7 +258,7 @@ const pathName = Astro.url.pathname;
           <li class="list-none text-xl hidden lg:block">
             <a
               class={`flex items-center ${
-                pathName == "/booking" ? "text-blue" : ""
+                pathName == "/booking"||pathName == "/booking" ? "text-blue" : ""
               }`}
               href="/booking">Booking</a
             >
@@ -266,7 +266,7 @@ const pathName = Astro.url.pathname;
           <li class="list-none text-xl hidden lg:block">
             <a
               class={`flex items-center ${
-                pathName == "/about" ? "text-blue" : ""
+                pathName == "/generic"||pathName == "/generic/" ? "text-blue" : ""
               }`}
               href="/generic">About</a
             >
@@ -274,7 +274,7 @@ const pathName = Astro.url.pathname;
           <li class="list-none text-xl hidden lg:block">
             <a
               class={`flex items-center ${
-                pathName == "/services" ? "text-blue" : ""
+                pathName == "/services"||pathName == "/services/" ? "text-blue" : ""
               }`}
               href="/services">Services</a
             >
