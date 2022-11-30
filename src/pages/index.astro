@@ -16,7 +16,7 @@ import Card from "../components/Card.astro";
 <Layout title="Welcome to Astro.">
   <!-- HERO -->
   <section
-    class="hero relative pb-28 md:pb-28 lg:min-h-[824px] md:min-h-[820px] sm:min-h-[520px] bg-cover pt-16 md:pt-24 lg:pt-14 bg-no-repeat bg-center [background-image:url('/images/blue-bg.png')]"
+    class="hero relative pb-28 md:pb-28 lg:min-h-[624px] md:min-h-[680px] sm:min-h-[520px] bg-cover pt-16 md:pt-16 lg:pt-5 bg-no-repeat bg-center [background-image:url('/images/blue-bg.png')]"
   >
     <div class="sm:container sm:mx-auto">
       <!-- TEXT CONTAINER -->
@@ -24,7 +24,7 @@ import Card from "../components/Card.astro";
         class="site-container flex md:flex-row flex-col-reverse gap-4 md:gap-12 lg:gap-[90px] items-center justify-center"
       >
         <p
-          class="text-sm md:text-2xl lg:text-4xl xl:text-5xl font-medium text-blue"
+          class="text-xl md:text-2xl lg:text-3xl xl:text-3xl font-medium text-blue"
         >
           CALL 1234-456-789
         </p>
@@ -40,7 +40,7 @@ import Card from "../components/Card.astro";
               <ul class="splide__list">
                 <li class="splide__slide">
                   <div class="image h-full">
-                    <img src="/images/wish.png" class="relative z-10" alt="" />
+                    <img src="/images/wish.png" class="relative z-10 xl:w-[35rem] md:w-[30rem]" alt="" />
                     <!-- <img
 						class="image-reflection relative bottom-5 z-0 [mask-image:linear-gradient(transparent_1%,rgba(255,255,255,.7)_99%)] [transform:rotateX(180deg)] bg-contain bg-no-repeat"
 						src="/images/wish.png"
@@ -51,7 +51,7 @@ import Card from "../components/Card.astro";
                   <div class="image h-full">
                     <img
                       src="/images/big-bmw.png"
-                      class="relative z-10"
+                      class="relative z-10 xl:w-[35rem] md:w-[30rem]"
                       alt=""
                     />
                     <!-- <img
@@ -64,7 +64,7 @@ import Card from "../components/Card.astro";
                   <div class="image h-full">
                     <img
                       src="/images/yellow.png"
-                      class="relative z-10"
+                      class="relative z-10 xl:w-[35rem] md:w-[30rem]"
                       alt=""
                     />
                     <!-- <img
@@ -81,13 +81,13 @@ import Card from "../components/Card.astro";
           <div class="w-full relative mb-14 mt-10 h-14">
             <div class="cta flex items-center justify-center -mt-10 gap-5">
               <button
-                class="py-4 px-6 bg-[#E5F9FD] font-medium lg:text-[30px] md:text-[20px] text-[12px] rounded-xl"
+                class="py-3 px-4 bg-[#E5F9FD] font-medium lg:text-lg text-base  rounded-xl"
               >
                 Call Now
               </button>
               <a
                 href="/booking"
-                class="py-4 px-6 bg-[#E5F9FD] font-medium lg:text-[30px] md:text-[20px] text-[12px] rounded-xl"
+                class="py-3 px-4 bg-[#E5F9FD] font-medium lg:text-lg text-base rounded-xl"
               >
                 Book Now
               </a>
@@ -114,17 +114,17 @@ import Card from "../components/Card.astro";
             </div>
 
             <div
-              class="my-slider-nav absolute left-0 w-full lg:-bottom-20 md:-bottom-16 -bottom-12 flex justify-center items-center gap-5"
+              class="my-slider-nav absolute left-0 w-full lg:-bottom-20 md:-bottom-16 -bottom-12 flex justify-center items-center gap-5 mt-10"
             >
               <button id="prevBtn" onclick="goTo('<')">
-                <img src="/images/prev.png" alt="" />
+                <img src="/images/prev.png" class="lg:w-8 w-6" alt="" />
               </button>
               <div class="slideNum">
-                <span id="currentSlide" class="text-2xl"></span> /
-                <span id="totalSlides"></span>
+                <span id="currentSlide" class="text-xl"></span> /
+                <span id="totalSlides" class="text-sm"></span>
               </div>
               <button id="nextBtn" onclick="goTo('>')">
-                <img src="/images/next.png" alt="" />
+                <img src="/images/next.png"  class="lg:w-8 w-6" alt="" />
               </button>
             </div>
           </div>
@@ -187,7 +187,7 @@ import Card from "../components/Card.astro";
       <!-- CUSTOMER CARE -->
 
       <div
-        class="customer-care shadow-md lg:shadow-none absolute right-0 bottom-0 w-full lg:max-w-[40%] flex items-center gap-8 bg-white py-[30px] px-3 md:px-14 lg:px-8 md:pr-[125px] lg:pr-[125px] z-10 lg:py-4"
+        class="customer-care shadow-md lg:shadow-none absolute right-0 bottom-0 w-full lg:max-w-[40%] flex items-center gap-8 bg-white py-[30px] px-3 md:px-14 lg:px-4 md:pr-[125px] lg:pr-[125px] z-10 lg:py-4"
       >
         <div class="flex items-start gap-5">
           <!-- <img
@@ -280,12 +280,12 @@ import Card from "../components/Card.astro";
   <!-- WELCOME -->
 
   <section
-    class="welcome pt-16 lg:pt-[80px] pb-[56px] flex flex-col items-center sm:container sm:mx-auto px-7 lg:px-7"
+    class="welcome pt-[40px] bp-[35px] lg:pt-[50px] pb-[40px] flex flex-col items-center sm:container sm:mx-auto "
   >
-    <h1 class="text-base md:text-[28px] lg:mb-6 lg:text-[50px] xl:text-[60px] font-medium">
+    <h1 class="text-2xl lg:mb-6 xl:text-3xl font-medium">
       WELCOME TO TAXI <span class="text-blue">BOOKING</span> WEBSITE
     </h1>
-    <h3 class="text-sm md:text-lg lg:text-5xl font-medium">
+    <h3 class="text-xl   xl:text-2xl font-medium">
       WE HAVE MOST RELIABLE TAXI FLEET
     </h3>
   </section>
@@ -302,22 +302,22 @@ import Card from "../components/Card.astro";
           class="card rounded-[10px] flex flex-col overflow-hidden md:w-[330px] lg:w-[521px] xl:w-[621px]"
         >
           <div
-            class="card-header bg-[#79a4bd] px-5 lg:px-12 flex flex-col py-3 lg:pt-[23px] lg:pb-[34px]"
+            class="card-header bg-[#79a4bd] px-5 lg:px-10 flex flex-col py-3 lg:py-5"
           >
-            <h4 class="text-lg lg:text-[36px] font-medium lg:mb-5">
+            <h4 class="text-lg lg:text-2xl font-medium ">
               Have you any question?
             </h4>
-            <h6 class="text-base lg:text-[28px]">
+            <h6 class="text-base lg:text-lg">
               Send us quick email: <span class="text-blue">taxi@gmail.com</span>
             </h6>
           </div>
 
           <div
-            class="card-body px-5 lg:px-12 flex flex-col pt-8 pb-12 lg:py-16 [background:rgba(177,232,252,0.5)] [backdrop-filter:blur(9px)]"
+            class="card-body px-5 lg:px-10 flex flex-col pt-8 pb-12 lg:py-5 [background:rgba(177,232,252,0.5)] [backdrop-filter:blur(9px)]"
           >
-            <h5 class="text-lg lg:text-[32px]">Company Name</h5>
-            <h4 class="font-medium text-[25px] lg:text-5xl">Contact Us</h4>
-            <p class="text-[15px] lg:text-[28px] mt-6">
+            <h5 class="text-xl lg:text-2xl">Company Name</h5>
+            <h4 class="font-medium text-lg lg:text-xl">Contact Us</h4>
+            <p class="text-base lg:text-lg mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud
@@ -340,24 +340,24 @@ import Card from "../components/Card.astro";
         </div>
       </div>
 
-      <div class="w-full md:w-2/5 flex flex-col gap-8 lg:gap-[63px] text-white">
+      <div class="w-full md:w-2/5 flex flex-col gap-1 lg:gap-2 text-white">
         <!-- call us -->
-        <div class="flex flex-col gap-4 lg:gap-[35px]">
-          <p class="text-xl lg:text-4xl font-medium">Call Us</p>
-          <p class="text-[15px] lg:text-[28px]">Book Your Taxi 123-456-789</p>
+        <div class="flex flex-col gap-1 lg:gap-1">
+          <p class="text-xl lg:text-2xl font-medium">Call Us</p>
+          <p class="text-base lg:text-lg">Book Your Taxi 123-456-789</p>
         </div>
 
         <!-- email us -->
-        <div class="flex flex-col gap-4 lg:gap-[35px]">
-          <p class="text-xl lg:text-4xl font-medium">Email Us</p>
-          <p class="text-[15px] lg:text-[28px]">Email:taxi@gmail.com</p>
+        <div class="flex flex-col gap-1 lg:gap-1">
+          <p class="text-xl lg:text-2xl font-medium">Email Us</p>
+          <p class="text-base lg:text-lg">Email:taxi@gmail.com</p>
         </div>
 
         <!-- find us -->
-        <div class="flex flex-col gap-4 lg:gap-[35px]">
-          <p class="text-xl lg:text-4xl font-medium">Find Us</p>
-          <p class="text-[15px] lg:text-[28px]">Our Office....</p>
-          <p class="text-[15px] lg:text-[28px]">
+        <div class="flex flex-col gap-1 lg:gap-1">
+          <p class="text-xl lg:text-2xl font-medium">Find Us</p>
+          <p class="text-base lg:text-lg">Our Office....</p>
+          <p class="text-base lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud
@@ -372,30 +372,30 @@ import Card from "../components/Card.astro";
   <section
     class="fleets site-container flex flex-col gap-7 md:gap-20 py-12 sm:container sm:mx-auto px-7 md:px-11 lg:px-16"
   >
-    <h2 class="text-lg md:text-[34px] lg:text-[60px] font-semibold text-center">
+    <h2 class="text-2xl md:text-2xl lg:text-3xl font-semibold text-center">
       OUR <span class="text-blue">FLEETS</span>
     </h2>
 
     <!-- fleets  -->
     <div
-      class="grid grid-cols-2 gap-x-6 gap-y-10 md:gap-y-16 md:gap-x-24 lg:gap-44"
+      class="grid grid-cols-2  gap-10 md:gap-10  lg:gap-15"
     >
       <!-- saloon -->
       <article
-        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-5 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
       >
         <div
-          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+          class="bg-blue text-xl lg:text-2xl py-2 md:py-5 font-semibold w-full text-white text-center"
         >
           SALOON
         </div>
 
-        <img src="/images/audi.png" alt="" />
+        <img src="/images/audi.png" class="w-80" alt="" />
 
         <ul
-          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+          class="flex items-center text-sm lg:text-base flex-col gap-5"
         >
-          <li class="w-max text-center flex items-center gap-2">
+          <li class="w-max text-center flex items-center gap-2 ">
             <img src="/images/dots.png" alt="" />
             4 Passanger
           </li>
@@ -408,27 +408,27 @@ import Card from "../components/Card.astro";
 
         <a
           href="/fleet"
-          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-base w-max mt-5 text-white px-5 lg:px-7 py-2 lg:py-3 rounded md:rounded-[10px]"
         >
           View Fleet
         </a>
       </article>
       <!-- executive -->
       <article
-        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex justify-between flex-col items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-5 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
       >
         <div
-          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
+          class="bg-blue text-xl lg:text-2xl py-2 md:py-5 font-semibold w-full text-white text-center"
         >
-          EXECUTIVE
+        EXECUTIVE
         </div>
 
-        <img src="/images/benz.png" alt="" />
+        <img src="/images/benz.png" class="w-80" alt="" />
 
         <ul
-          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
+          class="flex items-center text-sm lg:text-base flex-col gap-5"
         >
-          <li class="w-max text-center flex items-center gap-2">
+          <li class="w-max text-center flex items-center gap-2 ">
             <img src="/images/dots.png" alt="" />
             3 Passanger
           </li>
@@ -441,80 +441,81 @@ import Card from "../components/Card.astro";
 
         <a
           href="/fleet"
-          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
+          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-base w-max  text-white px-5 lg:px-7 py-2 lg:py-3 rounded md:rounded-[10px]"
         >
           View Fleet
         </a>
       </article>
-      <!-- saloon -->
-      <article
-        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
-      >
-        <div
-          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
-        >
-          SALOON
-        </div>
+     <!-- saloon -->
+     <article
+     class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-5 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+   >
+     <div
+       class="bg-blue text-xl lg:text-2xl py-2 md:py-5 font-semibold w-full text-white text-center"
+     >
+       SALOON
+     </div>
 
-        <img src="/images/audi.png" alt="" />
+     <img src="/images/audi.png" class="w-80" alt="" />
 
-        <ul
-          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
-        >
-          <li class="w-max text-center flex items-center gap-2">
-            <img src="/images/dots.png" alt="" />
-            4 Passanger
-          </li>
-          <li
-            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
-          >
-            <img src="/images/dots.png" alt="" />2 Suitcase
-          </li>
-        </ul>
+     <ul
+       class="flex items-center text-sm lg:text-base flex-col gap-5"
+     >
+       <li class="w-max text-center flex items-center gap-2 ">
+         <img src="/images/dots.png" alt="" />
+         4 Passanger
+       </li>
+       <li
+         class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+       >
+         <img src="/images/dots.png" alt="" />2 Suitcase
+       </li>
+     </ul>
 
-        <a
-          href="/fleet"
-          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
-        >
-          View Fleet
-        </a>
-      </article>
-      <!-- executive -->
-      <article
-        class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-6 md:pb-9 lg:pb-14 flex justify-between flex-col items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
-      >
-        <div
-          class="bg-blue text-sm md:text-xl lg:text-[36px] py-2 md:py-5 font-semibold w-full text-white text-center"
-        >
-          EXECUTIVE
-        </div>
+     <a
+       href="/fleet"
+       class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-base w-max mt-5 text-white px-5 lg:px-7 py-2 lg:py-3 rounded md:rounded-[10px]"
+     >
+       View Fleet
+     </a>
+   </article>
+   <!-- executive -->
+   <article
+     class="saloon overflow-hidden rounded-lg md:rounded-[21px] pb-5 flex flex-col justify-between items-center bg-[#E5F9FD] [box-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
+   >
+     <div
+       class="bg-blue text-xl lg:text-2xl py-2 md:py-5 font-semibold w-full text-white text-center"
+     >
+     EXECUTIVE
+     </div>
 
-        <img src="/images/benz.png" alt="" />
+     <img src="/images/benz.png" class="w-80" alt="" />
 
-        <ul
-          class="flex items-center text-sm lg:text-base flex-col gap-5 mt-5 md:mt-10"
-        >
-          <li class="w-max text-center flex items-center gap-2">
-            <img src="/images/dots.png" alt="" />
-            3 Passanger
-          </li>
-          <li
-            class="w-max text-center text-sm lg:text-base flex items-center gap-2"
-          >
-            <img src="/images/dots.png" alt="" />3 Suitcase
-          </li>
-        </ul>
+     <ul
+       class="flex items-center text-sm lg:text-base flex-col gap-5"
+     >
+       <li class="w-max text-center flex items-center gap-2 ">
+         <img src="/images/dots.png" alt="" />
+         3 Passanger
+       </li>
+       <li
+         class="w-max text-center text-sm lg:text-base flex items-center gap-2"
+       >
+         <img src="/images/dots.png" alt="" />3 Suitcase
+       </li>
+     </ul>
 
-        <a
-          href="/fleet"
-          class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-[29px] w-max mt-7 md:mt-12 text-white px-7 lg:px-12 py-2 lg:py-4 rounded md:rounded-[10px]"
-        >
-          View Fleet
-        </a>
-      </article>
+     <a
+       href="/fleet"
+       class="bg-[#338DC3] font-medium text-sm md:text-base lg:text-base w-max  text-white px-5 lg:px-7 py-2 lg:py-3 rounded md:rounded-[10px]"
+     >
+       View Fleet
+     </a>
+   </article>
+     
     </div>
 
-    <p class="text-sm md:text-base lg:text-[28px] text-center">
+    <p class="text-base lg:text-lg text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor
     </p>
@@ -523,20 +524,20 @@ import Card from "../components/Card.astro";
   <!-- JOURNEY -->
 
   <section
-    class="journey h-[242px] md:h-[500px] lg:h-[960px] [background-image:url('/images/journey-bg.png')] bg-cover"
+    class="journey h-[242px] md:h-[400px] lg:h-[500px] [background-image:url('/images/journey-bg.png')] bg-cover"
   >
     <div
-      class="overlay py-14 md:py-0 w-full h-full bg-black/40 justify-center flex-col lg:gap-8 text-white items-center flex"
+      class="overlay py-10 md:py-0 w-full h-full bg-black/40 justify-center flex-col lg:gap-4 text-white items-center flex"
     >
-      <h4 class="text-lg md:text-3xl lg:text-[60px]">
+      <h4 class="text-2xl lg:text-3xl">
         Enjoy The Journey With Us
       </h4>
-      <p class="text-sm md:text-xl lg:text-[40px]">
+      <p class="text-xl lg:text-2xl">
         You should be surely enjoy the ride with us.
       </p>
       <a
         href="/booking"
-        class="text-sm md:text-xl lg:text-[40px] rounded-[14px] border-[3px] mt-10 border-blue py-4 lg:py-5 px-10"
+        class="text-base lg:text-lg rounded-[14px] border-[3px] mt-10 border-blue py-4  px-7"
       >
         Book Now
       </a>
@@ -546,13 +547,13 @@ import Card from "../components/Card.astro";
   <!-- FEEDBACK -->
 
   <section
-    class="feedback py-16 lg:py-28 px-7 lg:px-16 flex flex-col items-center sm:container sm:mx-auto"
+    class="feedback py-16 lg:py-10 px-7 lg:px-10 flex flex-col items-center sm:container sm:mx-auto"
   >
    
-    <h2 class="text-xl md:text-3xl lg:text-[65px] font-semibold text-center">
+    <h2 class="text-xl lg:text-2xl xl:text-3xl font-semibold text-center">
       FEED <span class="text-blue">BACK</span>
     </h2>
-    <p class="text-sm md:text-base lg:text-[32px] lg:my-5">
+    <p class="text-base lg:text-xl lg:my-5">
       What Customer think of us.
     </p>
     <div class="start flex items-center gap-1">
@@ -579,18 +580,19 @@ import Card from "../components/Card.astro";
               class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
               alt=""
             />
-            <p class="text-sm lg:text-2xl italic">
+            <p class="text-base lg:text-xl italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut l
             </p>
             <h6
-              class="text-sm lg:text-2xl italic text-left w-full font-semibold"
+              class="text-base lg:text-xl italic text-left w-full font-semibold"
             >
               Kevin Smith
             </h6>
           </div>
         </li>
-        <li class="splide__slide py-8  px-3"><div
+        <li class="splide__slide py-8 px-3">
+          <div
             class="p-4 lg:p-8 pt-8 lg:pt-16 bg-[#E5F9FD] flex flex-col items-center gap-4 relative rounded-[10px] border-2 border-[#80B8DA]"
           >
             <img
@@ -598,17 +600,19 @@ import Card from "../components/Card.astro";
               class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
               alt=""
             />
-            <p class="text-sm lg:text-2xl italic">
+            <p class="text-base lg:text-xl italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut l
             </p>
             <h6
-              class="text-sm lg:text-2xl italic text-left w-full font-semibold"
+              class="text-base lg:text-xl italic text-left w-full font-semibold"
             >
               Kevin Smith
             </h6>
-          </div></li>
-        <li class="splide__slide py-8  px-3"><div
+          </div>
+        </li>
+        <li class="splide__slide py-8 px-3">
+          <div
             class="p-4 lg:p-8 pt-8 lg:pt-16 bg-[#E5F9FD] flex flex-col items-center gap-4 relative rounded-[10px] border-2 border-[#80B8DA]"
           >
             <img
@@ -616,17 +620,19 @@ import Card from "../components/Card.astro";
               class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
               alt=""
             />
-            <p class="text-sm lg:text-2xl italic">
+            <p class="text-base lg:text-xl italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut l
             </p>
             <h6
-              class="text-sm lg:text-2xl italic text-left w-full font-semibold"
+              class="text-base lg:text-xl italic text-left w-full font-semibold"
             >
               Kevin Smith
             </h6>
-          </div></li>
-        <li class="splide__slide py-8  px-3"><div
+          </div>
+        </li>
+        <li class="splide__slide py-8 px-3">
+          <div
             class="p-4 lg:p-8 pt-8 lg:pt-16 bg-[#E5F9FD] flex flex-col items-center gap-4 relative rounded-[10px] border-2 border-[#80B8DA]"
           >
             <img
@@ -634,16 +640,19 @@ import Card from "../components/Card.astro";
               class="h-8 w-8 lg:h-16 lg:w-16 -mt-12 lg:-mt-24"
               alt=""
             />
-            <p class="text-sm lg:text-2xl italic">
+            <p class="text-base lg:text-xl italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut l
             </p>
             <h6
-              class="text-sm lg:text-2xl italic text-left w-full font-semibold"
+              class="text-base lg:text-xl italic text-left w-full font-semibold"
             >
               Kevin Smith
             </h6>
-          </div></li>
+          </div>
+        </li>
+       
+       
       </ul>
     </div>
   </div>
