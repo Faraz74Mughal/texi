@@ -16,18 +16,18 @@ import { hour } from "../data/hour.json";
 >
   <div class="form-area w-[90%] mt-5 md:mt-0 md:w-1/2 bg-blue">
     <p
-      class="text-base md:text-xl lg:text-[36px] font-semibold py-3 md:py-4 lg:py-5 text-center text-white border-b border-white"
+      class="text-xl  lg:text-2xl xl:text-3xl font-semibold py-3 md:py-4 lg:py-5 text-center text-white border-b border-white"
     >
       Instant Fare Quote
     </p>
     <div
-      class="px-5 lg:px-8 flex flex-col gap-4 lg:gap-10 py-4 md:py-8 lg:py-10"
+      class="px-5 lg:px-8 flex flex-col gap-4 lg:gap-3 py-4 md:py-8 lg:py-10"
     >
       <div class="flex flex-col items-end gap-2 md:gap-5">
         <div class="input-group w-full">
           <input
             type="text"
-            class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+            class="py-3 lg:py-3 px-5 md:px-6 lg:px-6 w-full outline-none text-base lg:text-lg bg-[#e5f9fd] placeholder:text-blue text-blue"
             placeholder="Enter pickup location"
             x-model="formData.pickup"
             id="pickup"
@@ -39,7 +39,7 @@ import { hour } from "../data/hour.json";
         <div class="input-group flex gap-2 w-full flex-col relative">
           <input
             type="text"
-            class="py-3 lg:py-5 px-5 md:px-6 lg:px-11 w-full outline-none text-[13px] md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+            class="py-3 lg:py-3 px-5 md:px-6 lg:px-6 w-full outline-none text-base lg:text-lg bg-[#e5f9fd] placeholder:text-blue text-blue"
             id="destination"
             x-model="formData.destination"
             placeholder="Enter dropoff location"
@@ -48,11 +48,11 @@ import { hour } from "../data/hour.json";
         </div>
         <!-- END DESTINATION -->
 
-        <button
+        <!-- <button
           class="bg-[#e5f9fd] text-blue text-[10px] md:text-xs lg:text-base py-3 lg:py-4 w-max pl-6 lg:pl-12 pr-2 lg:pr-3 rounded-3xl"
         >
           Add waypoint
-        </button>
+        </button> -->
       </div>
 
       <!-- MAP -->
@@ -67,14 +67,14 @@ import { hour } from "../data/hour.json";
         <div class="input-group w-full">
           <label
             for=""
-            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            class="text-white text-base lg:text-lg font-semibold"
             >Pickup Date & Time</label
           >
           <div class="flex items-center bg-[#e5f9fd] mt-1 md:mt-3">
             <div class="w-full">
               <input
                 type="date"
-                class="py-3 lg:py-5 px-5 lg:w-[250px] md:w-[180px] outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+                class="py-3 lg:py-3 px-5 md:px-6 lg:px-6 w-full outline-none text-base lg:text-lg bg-[#e5f9fd] placeholder:text-blue text-blue"
                 x-model="formData.pickup_date"
                 id="pickup_date"
                 placeholder="Enter Pickup Date"
@@ -86,7 +86,8 @@ import { hour } from "../data/hour.json";
                 <!-- START PICKUP TIME -->
 
                 <select
-                  class="block absolute appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-xl w-full h-full py-3 lg:py-5 px-1 focus:outline-none"
+                
+                  class="block absolute appearance-none  text-blue bg-[#e5f9fd] text-base lg:text-lg w-full h-full py-3 lg:py-3 px-1 focus:outline-none"
                   x-model="formData.hour"
                   id="pickup_hour"
                 >
@@ -115,7 +116,7 @@ import { hour } from "../data/hour.json";
               <div class="relative w-1/2 border-l-2 border-blue">
                 <!-- START HOUR -->
                 <select
-                  class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-xl py-3 lg:py-5 px-1 leading-tight focus:outline-none"
+                  class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-lg py-3 lg:py-3 px-1 leading-tight focus:outline-none"
                   id="pickup_minnutes"
                   x-model="formData.min"
                 >
@@ -151,14 +152,14 @@ import { hour } from "../data/hour.json";
         <div class="input-group w-full">
           <label
             for=""
-            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            class="text-white text-base lg:text-lg font-semibold"
             >Return Date & Time</label
           >
           <div class="flex items-center bg-[#e5f9fd] mt-1 md:mt-3">
             <div class="w-full">
               <input
                 type="date"
-                class="py-3 lg:py-5 px-5 lg:w-[250px] md:w-[180px] outline-none w-full text-sm md:text-base lg:text-3xl bg-[#e5f9fd] placeholder:text-blue text-blue"
+                class="py-3 lg:py-3 px-5 md:px-6 lg:px-6 w-full outline-none text-base lg:text-lg bg-[#e5f9fd] placeholder:text-blue text-blue"
                 x-model="formData.pickup_date"
                 id="return_date"
                 placeholder="Enter Pickup Date"
@@ -170,7 +171,7 @@ import { hour } from "../data/hour.json";
                 <!-- START PICKUP TIME -->
 
                 <select
-                  class="block absolute appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-xl w-full h-full py-3 lg:py-5 px-1 focus:outline-none"
+                class="block absolute appearance-none  text-blue bg-[#e5f9fd] text-base lg:text-lg w-full h-full py-3 lg:py-3 px-1 focus:outline-none"
                   x-model="formData.hour"
                   id="return_hour"
                 >
@@ -199,7 +200,7 @@ import { hour } from "../data/hour.json";
               <div class="relative w-1/2 border-l-2 border-blue">
                 <!-- START HOUR -->
                 <select
-                  class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-xl py-3 lg:py-5 px-1 leading-tight focus:outline-none"
+                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-lg py-3 lg:py-3 px-1 leading-tight focus:outline-none"
                   id="return_minnutes"
                   x-model="formData.min"
                 >
@@ -235,14 +236,14 @@ import { hour } from "../data/hour.json";
         <div class="flex flex-col gap-2 md:gap-4">
           <label
             for=""
-            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            class="text-white text-base lg:text-lg font-semibold"
             >Passengers</label
           >
           <div class="relative w-full border-l-2 border-blue">
             <!-- START PASSENGER SELECT -->
             <div class="w-full">
               <select
-                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-4 lg:px-11 leading-tight focus:outline-none"
+                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-base lg:text-lg py-3 lg:py-3 px-6  leading-tight focus:outline-none"
                 id="passengers"
                 x-model="formData.passengers"
               >
@@ -279,14 +280,14 @@ import { hour } from "../data/hour.json";
         <div class="flex flex-col gap-2 md:gap-4">
           <label
             for=""
-            class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+            class="text-white text-base lg:text-lg font-semibold"
             >Bags</label
           >
           <div class="relative w-full border-l-2 border-blue">
             <!-- START LUGGAGE -->
             <div class="">
               <select
-                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-4 lg:px-11 leading-tight focus:outline-none"
+                class="block appearance-none w-full text-blue bg-[#e5f9fd] text-base lg:text-lg py-3 lg:py-3 px-6 leading-tight focus:outline-none"
                 name="bags"
                 id="bags"
                 x-model="formData.bags"
@@ -321,11 +322,11 @@ import { hour } from "../data/hour.json";
       <div class="relative w-full">
         <label
         for=""
-        class="text-white text-sm md:text-base lg:text-3xl font-semibold"
+        class="text-white text-base lg:text-lg font-semibold"
         >Direction</label
       >
         <select
-          class="mt-3 block appearance-none w-full text-blue bg-[#e5f9fd] text-sm md:text-base lg:text-3xl py-3 lg:py-5 px-5 lg:px-11 leading-tight focus:outline-none"
+          class="mt-3 block appearance-none w-full text-blue bg-[#e5f9fd] text-base lg:text-lg py-3 lg:py-3 px-6 leading-tight focus:outline-none"
           id="direction"
           x-model="formData.type"
         >
@@ -355,7 +356,7 @@ import { hour } from "../data/hour.json";
       >
         RESERVE NOW
       </button>
-      <p class="text-center text-xs lg:text-2xl text-white">
+      <p class="text-center text-base lg:text-lg text-white">
         If you have already book the ride then manage your bookings
       </p>
     </div>
@@ -369,19 +370,19 @@ import { hour } from "../data/hour.json";
     </div>
   </div>
   <div class="w-[90%] md:w-1/2 flex flex-col">
-    <h2 class="text-2xl lg:text-5xl font-medium mt-10 lg:mt-20">
+    <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium ">
       Taxi Booking
     </h2>
-    <p class="text-base lg:text-3xl mt-9 lg:mt-20">
+    <p class="text-base lg:text-lg mt-4 lg:mt-5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud
     </p>
-    <p class="text-base lg:text-3xl text-blue mt-7 lg:mt-10">
+    <p class="text-lg lg:text-xl text-blue mt-4 lg:mt-5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor
     </p>
-    <p class="text-base lg:text-3xl mt-9 lg:mt-20">
+    <p class="text-base lg:text-lg mt-4 lg:mt-5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud

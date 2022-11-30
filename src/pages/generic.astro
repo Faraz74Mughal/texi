@@ -6,23 +6,23 @@ import Card from '../components/Card.astro';
 <Layout title="Welcome to Astro.">
   <!-- GENERIC -->
   <section
-    class="generic-hero bg-cover mt-10 md:mt-14 lg:mt-0 h-[220px] md:h-[388px] lg:h-[728px] [background-image:url('/images/aboutus-bg.png')]"
+    class="flex justify-center items-center generic-hero bg-cover mt-10 md:mt-14 lg:mt-0 h-[200px] md:h-[250px] lg:h-[300px] [background-image:url('/images/aboutus-bg.png')]"
   >
     <div
-      class="bg-black/50 h-full w-full pt-16 md:pt-24 lg:pt-[210px] md:pb-[133px] lg:pb-[250px] flex flex-col items-center sm:container sm:mx-auto"
+      class="bg-black/50 h-full w-full flex flex-col items-center justify-center sm:container sm:mx-auto"
     >
       <h1
-        class="lg:text-[64px] text-base font-medium md:text-3xl text-center text-white lg:leading-[78px]"
+        class="xl:text-3xl lg:text-2xl text-xl mt-4  font-medium md:text-3xl text-center text-white lg:leading-[78px]"
       >
         About Us
       </h1>
       <p
-        class="lg:text-4xl text-xs font-medium md:text-xl text-center text-white"
+        class="xl:text-2xl lg:text-xl text-lg  font-medium md:text-xl text-center text-white"
       >
         We are here to provide you best Services.
       </p>
       <a  href="/booking"
-        class="bg-[#B6E9FC]/50 py-2 md:py-4 lg:py-9 px-5 md:px-14 lg:px-24 rounded md:rounded-2xl font-medium text-[8px] md:text-base lg:text-3xl mt-5 md:mt-8 [backdrop-filter:blur(9px)]"
+        class="bg-[#B6E9FC]/50 py-1 md:py-3 lg:py-4 px-2 md:px-4 lg:px-6 rounded md:rounded-2xl font-medium text-base md:text-xl lg:text-2xl mt-5 md:mt-8 [backdrop-filter:blur(9px)]"
       >
         BOOK NOW
       </a>
@@ -31,10 +31,10 @@ import Card from '../components/Card.astro';
 
   <!-- BUSINESS CLASS -->
   <section class="py-9 lg:py-[55px] px-5 lg:px-[75px] sm:container sm:mx-auto">
-    <h3 class="text-base md:text-2xl lg:text-5xl font-medium text-center">
+    <h3 class="text-xl lg:text-2xl xl:text-3xl font-medium text-center">
       WE HAVE BUSINESS CLASS CARS AT YOU SERVICE
     </h3>
-    <p class="text-[10px] md:text-base lg:text-2xl text-center mt-5 lg:mt-10">
+    <p class="text-base  lg:text-lg text-center mt-5 lg:mt-4">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud
@@ -52,12 +52,12 @@ import Card from '../components/Card.astro';
           />
         </div>
         <p
-          class="text-sm md:text-base lg:text-[28px] font-semibold text-center"
+          class="text-lg  lg:text-2xl font-semibold text-center"
         >
           QUALITY ASSURED
         </p>
         <p
-          class="text-center text-[10px] md:text-base lg:text-[28px] lg:leading-[34px] max-w-[428px]"
+          class="text-center text-base  lg:text-lg lg:leading-[34px] max-w-[428px]"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -75,12 +75,12 @@ import Card from '../components/Card.astro';
           />
         </div>
         <p
-          class="text-sm md:text-base lg:text-[28px] font-semibold text-center"
+        class="text-lg  lg:text-2xl font-semibold text-center"
         >
           HERITAGE AND HISTORY
         </p>
         <p
-          class="text-center text-[10px] md:text-base lg:text-[28px] lg:leading-[34px] max-w-[428px]"
+        class="text-center text-base  lg:text-lg lg:leading-[34px] max-w-[428px]"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -96,15 +96,15 @@ import Card from '../components/Card.astro';
       <div
         class="md:w-1/2 w-full bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
       >
-        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+        <h5 class="text-xl lg:text-2xl xl:text-3xl text-blue/50 font-medium">
           OUR <br class="md:hidden" /><span class="text-blue">SERVICE</span>
         </h5>
-        <p class="text-[17px] lg:text-[20px] xl:text-[28px] mt-10 lg:mt-10 mb-5 lg:mb-10">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud
         </p>
-        <p class="text-[17px] lg:text-[20px] xl:text-[28px]">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 mb-5 lg:mb-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor
         </p>
@@ -121,15 +121,15 @@ import Card from '../components/Card.astro';
       <div
         class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16  px-10 lg:px-[73px]"
       >
-        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+      <h5 class="text-xl lg:text-2xl xl:text-3xl text-blue/50 font-medium">
           OUR <br class="md:hidden" /><span class="text-blue">CARS</span>
         </h5>
-        <p class="text-[17px] lg:text-[20px] xl:text-[28px] mt-10 lg:mt-10 mb-5 lg:mb-10">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud
         </p>
-        <p class="text-[17px] lg:text-[20px] xl:text-[28px]">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor
         </p>
@@ -146,16 +146,16 @@ import Card from '../components/Card.astro';
       <div
         class="w-full md:w-1/2 bg-[#E5F9FD] py-7 lg:py-16 px-10 lg:px-[73px]"
       >
-        <h5 class="text-xl lg:text-4xl text-blue/50 font-medium">
+      <h5 class="text-xl lg:text-2xl xl:text-3xl text-blue/50 font-medium">
           OUR<br class="md:hidden" />
           <span class="text-blue">DRIVERS</span>
         </h5>
-        <p class="text-[17px] lg:text-[20px] xl:text-[28px] mt-10 lg:mt-10 mb-5 lg:mb-10">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud
         </p>
-        <p class="text-[17px] lg:text-[20px]  xl:text-[28px]">
+        <p class="text-base xl:text-lg mt-4 lg:mt-5 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor
         </p>
@@ -168,14 +168,14 @@ import Card from '../components/Card.astro';
   </section>
 
   <section
-    class="cta flex flex-col items-center gap-5 md:gap-10 py-8 [background:linear-gradient(180deg,#80B8DA_0%,rgba(128,184,218,0)_100%)] sm:container sm:mx-auto"
+    class="cta flex flex-col items-center gap-5 md:gap-5 py-8 [background:linear-gradient(180deg,#80B8DA_0%,rgba(128,184,218,0)_100%)] sm:container sm:mx-auto"
   >
-    <p class="font-semibold text-sm md:text-xl text-center text-white">
+    <p class="font-semibold text-md lg:text-lg text-center text-white">
       You are Looking for Some Taxi Then <br />
       You are on the Right Place
     </p>
     <a href="/booking"
-      class="text-white text-[8px] md:text-base bg-blue py-4 px-12 rounded-lg"
+      class="text-white text-base  bg-blue py-3 px-6 rounded-lg"
     >
       BOOK NOW
     </a>

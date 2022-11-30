@@ -5,17 +5,17 @@ import Card from "../components/Card.astro";
 
 <Layout title="Welcome to Astro.">
   <div
-    class="w-1/2 mb-8 border-b border-[rgba(51, 141, 195, 0.5)] sm:container sm:mx-auto"
+    class="w-1/2 mb-8 border-b border-[rgba(51, 141, 195, 0.5)] sm:container sm:mx-auto "
   >
-    <h4 class="uppercase text-blue text-xl lg:text-2xl py-4 px-20">
+    <h4 class="uppercase text-blue text-xl lg:text-2xl xl:text-3xl py-4 px-7 md:px-11 lg:px-16">
       OUR FLEETS
     </h4>
   </div>
 
-  <div class="flex flex-col justify-center bg-[#E5F9FD] gap-4 items-center">
+  <div class="flex flex-col justify-center bg-[#E5F9FD] gap-4 items-center px-7 md:px-11 lg:px-16">
     <div class="justify-items-center mt-3">
       <div class="text-center">
-        <h3 class="text-black text-xl font-semibold font-poppins">FEATURES</h3>
+        <h3 class="text-black text-lg lg:text-xl font-semibold font-poppins">FEATURES</h3>
       </div>
       <div class="p-1 flex gap-4 py-2">
         <a
@@ -88,7 +88,7 @@ import Card from "../components/Card.astro";
         </a>
       </div>
       <div class="p-1 text-center">
-        <h3 class="text-black text-xl font-poppins">
+        <h3 class="text-black text-base lg:text-lg font-poppins">
           Features of this Category
         </h3>
       </div>
@@ -97,11 +97,9 @@ import Card from "../components/Card.astro";
   <section>
     <div class="sm:container sm:mx-auto">
       <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
-        <div
-          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
-        >
+        <div class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]">
           <div class="p-5 w-full bg-blue rounded-t-lg text-center">
-            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+            <h3 class="text-xl lg:text-2xl xl:text-3xl spacing-md text-white font-semibold font-poppins">
               SALOON
             </h3>
           </div>
@@ -114,7 +112,7 @@ import Card from "../components/Card.astro";
             />
           </a>
 
-          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD] text:sm lg:text-base">
             <li class="flex items-center">
               <svg
                 class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
@@ -145,9 +143,9 @@ import Card from "../components/Card.astro";
             </li>
           </div>
         </div>
-        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+        <div class="bg-white flex flex-col my-4 md:px-6">
           <p
-            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+            class="text-base lg:text-lg md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
           >
             Toyota Corolla, VW Passat or similar (standard saloon vehicle) .
             These can accommodate up to 3 passengers plus 3 suitcases (10kg
@@ -168,11 +166,9 @@ import Card from "../components/Card.astro";
         </div>
       </div>
       <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
-        <div
-          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
-        >
+        <div class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]">
           <div class="p-5 w-full bg-blue rounded-t-lg text-center">
-            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+            <h3 class="text-xl lg:text-2xl xl:text-3xl spacing-md text-white font-semibold font-poppins">
               ESTATE
             </h3>
           </div>
@@ -185,7 +181,7 @@ import Card from "../components/Card.astro";
             />
           </a>
 
-          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD] text:sm lg:text-base">
             <li class="flex items-center">
               <svg
                 class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
@@ -216,14 +212,11 @@ import Card from "../components/Card.astro";
             </li>
           </div>
         </div>
-        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+        <div class="bg-white flex flex-col my-4 md:px-6">
           <p
-            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+            class="text-base lg:text-lg md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
           >
-            Toyota Corolla, Ford Focus, Vauxhall Astra or similar (Estate
-            vehicle) . These can accommodate up to 4 passengers plus 4 suitcases
-            (20kg max) or 4 passengers plus 6 x10kg hand luggage. Any more
-            luggage than this will require a larger vehicle such as our Minibus.
+          Toyota Corolla, Ford Focus, Vauxhall Astra or similar (Estate vehicle) . These can accommodate up to 4 passengers plus 4 suitcases (20kg max) or 4 passengers plus 6 x10kg hand luggage. Any more luggage than this will require a larger vehicle such as our Minibus
           </p>
           <div
             class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
@@ -237,11 +230,9 @@ import Card from "../components/Card.astro";
         </div>
       </div>
       <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 my-9 mx-5 bg-white">
-        <div
-          class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]"
-        >
+        <div class="m-5 rounded-lg border border-gray-200 flex flex-col items-center justify-center shadow-md dark:bg-gray-800 dark:border-gray-700 bg-[#E5F9FD]">
           <div class="p-5 w-full bg-blue rounded-t-lg text-center">
-            <h3 class="text-2xl spacing-md text-white font-bold font-poppins">
+            <h3 class="text-xl lg:text-2xl xl:text-3xl spacing-md text-white font-semibold font-poppins">
               8 SEATER MINIBUS
             </h3>
           </div>
@@ -254,7 +245,7 @@ import Card from "../components/Card.astro";
             />
           </a>
 
-          <div class="p-5 grid justify-items-center bg-[#E5F9FD]">
+          <div class="p-5 grid justify-items-center bg-[#E5F9FD] text:sm lg:text-base">
             <li class="flex items-center">
               <svg
                 class="w-4 h-4 mr-1.5 text-blue-500 dark:text-blue-400 flex-shrink-0"
@@ -285,13 +276,11 @@ import Card from "../components/Card.astro";
             </li>
           </div>
         </div>
-        <div class="bg-white flex flex-col justify-between my-4 md:px-6">
+        <div class="bg-white flex flex-col  my-4 md:px-6">
           <p
-            class="lg:text-2xl md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
+            class="text-base lg:text-lg md:text-base m-3 lg:p-0 md:p-8 text-left tracking-widest leading-loose"
           >
-            VW Transporter or similar. These can accommodate 8 passengers plus
-            up to 8 standard suitcases (23kg max) plus a small amount of hand
-            luggage of 10kg.
+          VW Transporter or similar. These can accommodate 8 passengers plus up to 8 standard suitcases (23kg max) plus a small amount of hand luggage of 10kg.
           </p>
           <div
             class="flex lg:flex-col md:flex-col md:justify-between lg:items-start md:items-center"
